@@ -20,6 +20,7 @@
 		DBEEBF0514D795A900D992FD /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBF0414D795A900D992FD /* SecondViewController.m */; };
 		DBEEBF0714D795A900D992FD /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBF0614D795A900D992FD /* second.png */; };
 		DBEEBF0914D795A900D992FD /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBF0814D795A900D992FD /* second@2x.png */; };
+		DBEEBF1214D7966500D992FD /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBF1114D7966500D992FD /* FlickrFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,21 +28,24 @@
 		DBEEBEE714D795A900D992FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DBEEBEE914D795A900D992FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DBEEBEEB14D795A900D992FD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		DBEEBEEF14D795A900D992FD /* PhotoGallery-Info.plist */ = {isa = PBXFileReference; path = "PhotoGallery-Info.plist"; sourceTree = "<group>"; };
+		DBEEBEEF14D795A900D992FD /* PhotoGallery-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhotoGallery-Info.plist"; sourceTree = "<group>"; };
 		DBEEBEF114D795A900D992FD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DBEEBEF314D795A900D992FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DBEEBEF514D795A900D992FD /* PhotoGallery-Prefix.pch */ = {isa = PBXFileReference; path = "PhotoGallery-Prefix.pch"; sourceTree = "<group>"; };
-		DBEEBEF614D795A900D992FD /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		DBEEBEF514D795A900D992FD /* PhotoGallery-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhotoGallery-Prefix.pch"; sourceTree = "<group>"; };
+		DBEEBEF614D795A900D992FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DBEEBEF714D795A900D992FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DBEEBEFA14D795A900D992FD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		DBEEBEFC14D795A900D992FD /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
+		DBEEBEFC14D795A900D992FD /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		DBEEBEFD14D795A900D992FD /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		DBEEBEFF14D795A900D992FD /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		DBEEBF0114D795A900D992FD /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		DBEEBF0314D795A900D992FD /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
+		DBEEBF0314D795A900D992FD /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		DBEEBF0414D795A900D992FD /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		DBEEBF0614D795A900D992FD /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		DBEEBF0814D795A900D992FD /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		DBEEBF0F14D7966500D992FD /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
+		DBEEBF1014D7966500D992FD /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
+		DBEEBF1114D7966500D992FD /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,9 @@
 				DBEEBF0414D795A900D992FD /* SecondViewController.m */,
 				DBEEBF0614D795A900D992FD /* second.png */,
 				DBEEBF0814D795A900D992FD /* second@2x.png */,
+				DBEEBF0F14D7966500D992FD /* FlickrAPIKey.h */,
+				DBEEBF1014D7966500D992FD /* FlickrFetcher.h */,
+				DBEEBF1114D7966500D992FD /* FlickrFetcher.m */,
 				DBEEBEEE14D795A900D992FD /* Supporting Files */,
 			);
 			path = PhotoGallery;
@@ -185,6 +192,7 @@
 				DBEEBEF814D795A900D992FD /* AppDelegate.m in Sources */,
 				DBEEBEFE14D795A900D992FD /* FirstViewController.m in Sources */,
 				DBEEBF0514D795A900D992FD /* SecondViewController.m in Sources */,
+				DBEEBF1214D7966500D992FD /* FlickrFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
