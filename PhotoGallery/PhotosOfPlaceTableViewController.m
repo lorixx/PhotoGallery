@@ -1,66 +1,45 @@
 //
-//  ListOfPlacesTableViewController.m
+//  PhotosOfPlaceTableViewController.m
 //  PhotoGallery
 //
-//  Created by Zhisheng Huang on 1/31/12.
+//  Created by Zhisheng Huang on 2/1/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "ListOfPlacesTableViewController.h"
-#import "FlickrFetcher.h"
 #import "PhotosOfPlaceTableViewController.h"
+#import "PhotoScrollViewController.h"
+#import "FlickrFetcher.h"
 
-@implementation ListOfPlacesTableViewController
 
-@synthesize topPlaces = _topPlaces;
-@synthesize countryNames = _countryNames;
 
-/* Lazy initialization for getting the top places */
--(NSArray*)topPlaces
+@interface PhotosOfPlaceTableViewController()
+@property (nonatomic, strong) NSArray *photos;
+@end
+
+
+@implementation PhotosOfPlaceTableViewController
+
+@synthesize place = _place;
+@synthesize photos = _photos;
+
+
+-(NSArray*) photos{
+    if (!_photos) {
+        _photos = [FlickrFetcher photosInPlace:self.place maxResults:50];
+    }
+    return _photos;
+}
+
+
+
+-(id) initWithPlace: (NSDictionary*)currentPlace
 {
-    if (!_topPlaces) {
-        
-        NSArray* allPlaces = [FlickrFetcher topPlaces];
-        
-        
-        NSMutableDictionary *countryMap = [[NSMutableDictionary alloc]init ];
-        
-        for (id place in allPlaces) {
-            NSString *placeName = [place objectForKey:FLICKR_PLACE_NAME];
-            NSArray *nameItems = [placeName componentsSeparatedByString:@", "];
-            NSString *countryName = [nameItems lastObject];
-            
-            if (![countryMap objectForKey:countryName]) {
-                NSMutableArray *placesForCountry = [[NSMutableArray alloc]initWithObjects:place, nil ];
-                [countryMap setObject:placesForCountry forKey:countryName];
-            } else {
-                NSMutableArray *currentPlacesForCountry = [countryMap objectForKey:countryName];
-                [currentPlacesForCountry addObject:place];
-                [countryMap setObject:currentPlacesForCountry forKey:countryName];
-            }
-        }
-        
-        //now we have the places array
-        NSMutableArray *topPlaces = [NSMutableArray array ];
-        NSArray *sortedKeys = [[countryMap allKeys] sortedArrayUsingSelector: @selector(compare:)];
-        for (NSString *key in sortedKeys ) {
-            [topPlaces addObject: [countryMap objectForKey:key]];
-            [self.countryNames addObject:key];
-        }
-        
-        _topPlaces = topPlaces;
-        
+    self = [super init ];
+    if (self) {
+        self.place = currentPlace;
     }
-    return _topPlaces;
+    return self;
 }
-
--(NSMutableArray*)countryNames{
-    if (!_countryNames) {
-        _countryNames = [NSMutableArray array];
-    }
-    return _countryNames;
-}
-
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -85,6 +64,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    
+    
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -130,36 +113,41 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return [self.topPlaces count];
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [[self.topPlaces objectAtIndex:section]count];
+    return [self.photos count];
 }
 
+
+
+#define OWNER_NAME_KEY @"ownername"
+#define PHOTO_TITLE_KEY @"title"
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Top places";
+    static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell...
     
-    NSDictionary *place = [[self.topPlaces objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    cell.textLabel.text = [place valueForKey:FLICKR_PLACE_NAME];
+    NSDictionary *photo = [self.photos objectAtIndex:indexPath.row];
+    
+    
+    
+    cell.textLabel.text = [photo objectForKey: PHOTO_TITLE_KEY];
+    cell.detailTextLabel.text = [photo objectForKey:OWNER_NAME_KEY];
     
     return cell;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section 
-{
-    return [self.countryNames objectAtIndex:section];
 }
 
 /*
@@ -205,15 +193,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-    PhotosOfPlaceTableViewController *photoOfPlaceTableViewController = [[PhotosOfPlaceTableViewController alloc]initWithPlace: [[self.topPlaces objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
-    [self.navigationController pushViewController:photoOfPlaceTableViewController animated:YES];
+
+    PhotoScrollViewController *photoViewController = [[PhotoScrollViewController alloc]initWithPhoto:[self.photos objectAtIndex:indexPath.row]];
+    
+    [self.navigationController pushViewController:photoViewController animated:YES];
+
+    
 }
 
 @end
