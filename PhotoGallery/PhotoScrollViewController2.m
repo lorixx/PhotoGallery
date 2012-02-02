@@ -6,11 +6,11 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "PhotoScrollViewController.h"
+#import "PhotoScrollViewController2.h"
 #import "FlickrFetcher.h"
 
 
-@interface PhotoScrollViewController() <UIScrollViewDelegate>
+@interface PhotoScrollViewController2() <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) NSDictionary *photo;
@@ -19,7 +19,7 @@
 
 
 
-@implementation PhotoScrollViewController
+@implementation PhotoScrollViewController2
 
 
 @synthesize scrollView = _scrollView;
@@ -39,32 +39,24 @@
 }
 
 
--(void)setScrollView:(UIScrollView *)scrollView
-{
-    _scrollView = scrollView;
-}
-
--(void)setImageView:(UIImageView *)imageView
-{
-    _imageView = imageView;
-}
+//-(void)setScrollView:(UIScrollView *)scrollView
+//{
+//    _scrollView = scrollView;
+//}
+//
+//-(void)setImageView:(UIImageView *)imageView
+//{
+//    _imageView = imageView;
+//}
 
 -(NSURL *)photoURL
 {
     if (!_photoURL) {
         _photoURL = [FlickrFetcher urlForPhoto:self.photo format:FlickrPhotoFormatOriginal];
-       
+        
     }
     return _photoURL;
 }
-
-
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-}
-
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

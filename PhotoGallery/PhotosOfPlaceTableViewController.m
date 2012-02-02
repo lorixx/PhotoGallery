@@ -9,6 +9,7 @@
 #import "PhotosOfPlaceTableViewController.h"
 #import "PhotoScrollViewController.h"
 #import "FlickrFetcher.h"
+#import "PhotoScrollViewController2.h"
 
 
 
@@ -194,7 +195,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    PhotoScrollViewController *photoViewController = [[PhotoScrollViewController alloc]initWithPhoto:[self.photos objectAtIndex:indexPath.row]];
+    PhotoScrollViewController2 *photoViewController = [[PhotoScrollViewController2 alloc]initWithPhoto:[self.photos objectAtIndex:indexPath.row]];
     
     [self.navigationController pushViewController:photoViewController animated:YES];
 
