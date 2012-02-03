@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DBDC80A714DBA463006B4D73 /* RecentPhotosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDC80A614DBA463006B4D73 /* RecentPhotosTableViewController.m */; };
 		DBEEBEE814D795A900D992FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBEEBEE714D795A900D992FD /* UIKit.framework */; };
 		DBEEBEEA14D795A900D992FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBEEBEE914D795A900D992FD /* Foundation.framework */; };
 		DBEEBEEC14D795A900D992FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBEEBEEB14D795A900D992FD /* CoreGraphics.framework */; };
@@ -14,19 +15,20 @@
 		DBEEBEF414D795A900D992FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBEF314D795A900D992FD /* main.m */; };
 		DBEEBEF814D795A900D992FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBEF714D795A900D992FD /* AppDelegate.m */; };
 		DBEEBEFB14D795A900D992FD /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBEF914D795A900D992FD /* MainStoryboard.storyboard */; };
-		DBEEBEFE14D795A900D992FD /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBEFD14D795A900D992FD /* FirstViewController.m */; };
 		DBEEBF0014D795A900D992FD /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBEFF14D795A900D992FD /* first.png */; };
 		DBEEBF0214D795A900D992FD /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBF0114D795A900D992FD /* first@2x.png */; };
-		DBEEBF0514D795A900D992FD /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBF0414D795A900D992FD /* SecondViewController.m */; };
 		DBEEBF0714D795A900D992FD /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBF0614D795A900D992FD /* second.png */; };
 		DBEEBF0914D795A900D992FD /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBF0814D795A900D992FD /* second@2x.png */; };
 		DBEEBF1214D7966500D992FD /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBF1114D7966500D992FD /* FlickrFetcher.m */; };
 		DBEEBF1614D7B10700D992FD /* ListOfPlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBF1414D7B10700D992FD /* ListOfPlacesTableViewController.m */; };
 		DBEEBF1A14D905E100D992FD /* PhotosOfPlaceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBF1914D905E100D992FD /* PhotosOfPlaceTableViewController.m */; };
-		DBEEBF2114D9126A00D992FD /* PhotoScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBF2014D9126A00D992FD /* PhotoScrollViewController.m */; };
+		DBEEBF3B14DA775800D992FD /* PhotoScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBF3A14DA775800D992FD /* PhotoScrollViewController.m */; };
+		DBEEBF3D14DA7A4E00D992FD /* 16598983.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBF3C14DA7A4E00D992FD /* 16598983.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DBDC80A514DBA463006B4D73 /* RecentPhotosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentPhotosTableViewController.h; sourceTree = "<group>"; };
+		DBDC80A614DBA463006B4D73 /* RecentPhotosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentPhotosTableViewController.m; sourceTree = "<group>"; };
 		DBEEBEE314D795A900D992FD /* PhotoGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBEEBEE714D795A900D992FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DBEEBEE914D795A900D992FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -38,12 +40,8 @@
 		DBEEBEF614D795A900D992FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DBEEBEF714D795A900D992FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DBEEBEFA14D795A900D992FD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		DBEEBEFC14D795A900D992FD /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		DBEEBEFD14D795A900D992FD /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		DBEEBEFF14D795A900D992FD /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		DBEEBF0114D795A900D992FD /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		DBEEBF0314D795A900D992FD /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		DBEEBF0414D795A900D992FD /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		DBEEBF0614D795A900D992FD /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		DBEEBF0814D795A900D992FD /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		DBEEBF0F14D7966500D992FD /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
@@ -53,8 +51,9 @@
 		DBEEBF1414D7B10700D992FD /* ListOfPlacesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListOfPlacesTableViewController.m; sourceTree = "<group>"; };
 		DBEEBF1814D905E000D992FD /* PhotosOfPlaceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosOfPlaceTableViewController.h; sourceTree = "<group>"; };
 		DBEEBF1914D905E100D992FD /* PhotosOfPlaceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosOfPlaceTableViewController.m; sourceTree = "<group>"; };
-		DBEEBF1F14D9126900D992FD /* PhotoScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoScrollViewController.h; sourceTree = "<group>"; };
-		DBEEBF2014D9126A00D992FD /* PhotoScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoScrollViewController.m; sourceTree = "<group>"; };
+		DBEEBF3914DA775800D992FD /* PhotoScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoScrollViewController.h; sourceTree = "<group>"; };
+		DBEEBF3A14DA775800D992FD /* PhotoScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoScrollViewController.m; sourceTree = "<group>"; };
+		DBEEBF3C14DA7A4E00D992FD /* 16598983.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 16598983.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,15 +100,15 @@
 		DBEEBEED14D795A900D992FD /* PhotoGallery */ = {
 			isa = PBXGroup;
 			children = (
+				DBDC80A514DBA463006B4D73 /* RecentPhotosTableViewController.h */,
+				DBDC80A614DBA463006B4D73 /* RecentPhotosTableViewController.m */,
+				DBEEBF3914DA775800D992FD /* PhotoScrollViewController.h */,
+				DBEEBF3A14DA775800D992FD /* PhotoScrollViewController.m */,
 				DBEEBEF614D795A900D992FD /* AppDelegate.h */,
 				DBEEBEF714D795A900D992FD /* AppDelegate.m */,
 				DBEEBEF914D795A900D992FD /* MainStoryboard.storyboard */,
-				DBEEBEFC14D795A900D992FD /* FirstViewController.h */,
-				DBEEBEFD14D795A900D992FD /* FirstViewController.m */,
 				DBEEBEFF14D795A900D992FD /* first.png */,
 				DBEEBF0114D795A900D992FD /* first@2x.png */,
-				DBEEBF0314D795A900D992FD /* SecondViewController.h */,
-				DBEEBF0414D795A900D992FD /* SecondViewController.m */,
 				DBEEBF0614D795A900D992FD /* second.png */,
 				DBEEBF0814D795A900D992FD /* second@2x.png */,
 				DBEEBF0F14D7966500D992FD /* FlickrAPIKey.h */,
@@ -119,8 +118,6 @@
 				DBEEBF1414D7B10700D992FD /* ListOfPlacesTableViewController.m */,
 				DBEEBF1814D905E000D992FD /* PhotosOfPlaceTableViewController.h */,
 				DBEEBF1914D905E100D992FD /* PhotosOfPlaceTableViewController.m */,
-				DBEEBF1F14D9126900D992FD /* PhotoScrollViewController.h */,
-				DBEEBF2014D9126A00D992FD /* PhotoScrollViewController.m */,
 				DBEEBEEE14D795A900D992FD /* Supporting Files */,
 			);
 			path = PhotoGallery;
@@ -129,6 +126,7 @@
 		DBEEBEEE14D795A900D992FD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DBEEBF3C14DA7A4E00D992FD /* 16598983.jpeg */,
 				DBEEBEEF14D795A900D992FD /* PhotoGallery-Info.plist */,
 				DBEEBEF014D795A900D992FD /* InfoPlist.strings */,
 				DBEEBEF314D795A900D992FD /* main.m */,
@@ -193,6 +191,7 @@
 				DBEEBF0214D795A900D992FD /* first@2x.png in Resources */,
 				DBEEBF0714D795A900D992FD /* second.png in Resources */,
 				DBEEBF0914D795A900D992FD /* second@2x.png in Resources */,
+				DBEEBF3D14DA7A4E00D992FD /* 16598983.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,12 +204,11 @@
 			files = (
 				DBEEBEF414D795A900D992FD /* main.m in Sources */,
 				DBEEBEF814D795A900D992FD /* AppDelegate.m in Sources */,
-				DBEEBEFE14D795A900D992FD /* FirstViewController.m in Sources */,
-				DBEEBF0514D795A900D992FD /* SecondViewController.m in Sources */,
 				DBEEBF1214D7966500D992FD /* FlickrFetcher.m in Sources */,
 				DBEEBF1614D7B10700D992FD /* ListOfPlacesTableViewController.m in Sources */,
 				DBEEBF1A14D905E100D992FD /* PhotosOfPlaceTableViewController.m in Sources */,
-				DBEEBF2114D9126A00D992FD /* PhotoScrollViewController.m in Sources */,
+				DBEEBF3B14DA775800D992FD /* PhotoScrollViewController.m in Sources */,
+				DBDC80A714DBA463006B4D73 /* RecentPhotosTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +320,7 @@
 				DBEEBF0E14D795A900D992FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

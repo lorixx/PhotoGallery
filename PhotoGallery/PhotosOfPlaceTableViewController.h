@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+
+#define OWNER_NAME_KEY @"ownername"
+#define PHOTO_TITLE_KEY @"title"
 @interface PhotosOfPlaceTableViewController : UITableViewController
 
 @property (nonatomic, weak) NSDictionary *place;

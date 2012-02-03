@@ -22,10 +22,10 @@
 @synthesize place = _place;
 @synthesize photos = _photos;
 
-
+#define MAX_PHOTOS_FOR_PLACE 8
 -(NSArray*) photos{
     if (!_photos) {
-        _photos = [FlickrFetcher photosInPlace:self.place maxResults:50];
+        _photos = [FlickrFetcher photosInPlace:self.place maxResults:MAX_PHOTOS_FOR_PLACE];
     }
     return _photos;
 }
@@ -78,6 +78,7 @@
 
 - (void)viewDidUnload
 {
+    self.photos = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -113,22 +114,19 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [self.photos count];
 }
 
 
 
-#define OWNER_NAME_KEY @"ownername"
-#define PHOTO_TITLE_KEY @"title"
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -142,10 +140,18 @@
     
     NSDictionary *photo = [self.photos objectAtIndex:indexPath.row];
     
+    NSString * title = [photo objectForKey: PHOTO_TITLE_KEY];
+    if ([title isEqualToString:@""]) {
+        title = @"Untitled";
+    }
     
-    
-    cell.textLabel.text = [photo objectForKey: PHOTO_TITLE_KEY];
+    cell.textLabel.text = title;
     cell.detailTextLabel.text = [photo objectForKey:OWNER_NAME_KEY];
+    
+    
+    NSData *photoData = [NSData dataWithContentsOfURL:[FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatSquare]];
+    cell.imageView.image = [UIImage imageWithData:photoData];
+    
     
     return cell;
 }
@@ -189,14 +195,27 @@
 }
 */
 
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    PhotoScrollViewController *photoViewController = [[PhotoScrollViewController alloc]initWithPhoto:[self.photos objectAtIndex:indexPath.row]];
     
+//    UIStoryboard *storyboard = self.storyboard;
+//    PhotoScrollViewController *photoViewController = [storyboard instantiateViewControllerWithIdentifier:@"PhotoScrollViewController"];
+//    
+//    // configure the new view controller explicitly here.
+    //photoViewController.photo = [self.photos objectAtIndex:indexPath.row];
+     
+
+    
+    
+    PhotoScrollViewController *photoViewController = [[PhotoScrollViewController alloc]initWithPhoto:[self.photos objectAtIndex:indexPath.row]];
     [self.navigationController pushViewController:photoViewController animated:YES];
+
+
+    //[self performSegueWithIdentifier:@"photoView" sender: self];
 
     
 }

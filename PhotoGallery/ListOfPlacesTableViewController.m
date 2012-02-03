@@ -95,6 +95,11 @@
 
 - (void)viewDidUnload
 {
+    
+    
+    self.topPlaces = nil;
+    self.countryNames = nil;
+    
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
