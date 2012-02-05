@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		DBDC80A714DBA463006B4D73 /* RecentPhotosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDC80A614DBA463006B4D73 /* RecentPhotosTableViewController.m */; };
+		DBE45E7414DE1BCA00D1858B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE45E7314DE1BCA00D1858B /* MapKit.framework */; };
+		DBE45E7714DE1BD300D1858B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE45E7614DE1BD300D1858B /* CoreLocation.framework */; };
+		DBE45E7A14DE3BB900D1858B /* SingletonNetworkSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE45E7914DE3BB900D1858B /* SingletonNetworkSpinner.m */; };
 		DBEEBEE814D795A900D992FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBEEBEE714D795A900D992FD /* UIKit.framework */; };
 		DBEEBEEA14D795A900D992FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBEEBEE914D795A900D992FD /* Foundation.framework */; };
 		DBEEBEEC14D795A900D992FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBEEBEEB14D795A900D992FD /* CoreGraphics.framework */; };
@@ -29,6 +32,10 @@
 /* Begin PBXFileReference section */
 		DBDC80A514DBA463006B4D73 /* RecentPhotosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentPhotosTableViewController.h; sourceTree = "<group>"; };
 		DBDC80A614DBA463006B4D73 /* RecentPhotosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentPhotosTableViewController.m; sourceTree = "<group>"; };
+		DBE45E7314DE1BCA00D1858B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DBE45E7614DE1BD300D1858B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DBE45E7814DE3BB900D1858B /* SingletonNetworkSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonNetworkSpinner.h; sourceTree = "<group>"; };
+		DBE45E7914DE3BB900D1858B /* SingletonNetworkSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonNetworkSpinner.m; sourceTree = "<group>"; };
 		DBEEBEE314D795A900D992FD /* PhotoGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBEEBEE714D795A900D992FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DBEEBEE914D795A900D992FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -61,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBE45E7714DE1BD300D1858B /* CoreLocation.framework in Frameworks */,
+				DBE45E7414DE1BCA00D1858B /* MapKit.framework in Frameworks */,
 				DBEEBEE814D795A900D992FD /* UIKit.framework in Frameworks */,
 				DBEEBEEA14D795A900D992FD /* Foundation.framework in Frameworks */,
 				DBEEBEEC14D795A900D992FD /* CoreGraphics.framework in Frameworks */,
@@ -90,6 +99,8 @@
 		DBEEBEE614D795A900D992FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DBE45E7614DE1BD300D1858B /* CoreLocation.framework */,
+				DBE45E7314DE1BCA00D1858B /* MapKit.framework */,
 				DBEEBEE714D795A900D992FD /* UIKit.framework */,
 				DBEEBEE914D795A900D992FD /* Foundation.framework */,
 				DBEEBEEB14D795A900D992FD /* CoreGraphics.framework */,
@@ -118,6 +129,8 @@
 				DBEEBF1414D7B10700D992FD /* ListOfPlacesTableViewController.m */,
 				DBEEBF1814D905E000D992FD /* PhotosOfPlaceTableViewController.h */,
 				DBEEBF1914D905E100D992FD /* PhotosOfPlaceTableViewController.m */,
+				DBE45E7814DE3BB900D1858B /* SingletonNetworkSpinner.h */,
+				DBE45E7914DE3BB900D1858B /* SingletonNetworkSpinner.m */,
 				DBEEBEEE14D795A900D992FD /* Supporting Files */,
 			);
 			path = PhotoGallery;
@@ -209,6 +222,7 @@
 				DBEEBF1A14D905E100D992FD /* PhotosOfPlaceTableViewController.m in Sources */,
 				DBEEBF3B14DA775800D992FD /* PhotoScrollViewController.m in Sources */,
 				DBDC80A714DBA463006B4D73 /* RecentPhotosTableViewController.m in Sources */,
+				DBE45E7A14DE3BB900D1858B /* SingletonNetworkSpinner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

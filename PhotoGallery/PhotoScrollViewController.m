@@ -8,6 +8,7 @@
 
 #import "PhotoScrollViewController.h"
 #import "FlickrFetcher.h"
+#import "SingletonNetworkSpinner.h"
 
 
 @interface PhotoScrollViewController() <UIScrollViewDelegate>
@@ -84,9 +85,8 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-#pragma mark - View lifecycle
 
--(void)viewWillAppear:(BOOL)animated
+- (void) saveToDatabase
 {
     NSUserDefaults *defaultDataBase = [NSUserDefaults standardUserDefaults];
     NSMutableArray*recentPhotos = [[defaultDataBase objectForKey:RECENT_PHOTOS] mutableCopy];
@@ -104,30 +104,59 @@
         [recentPhotos insertObject:self.photo atIndex:0];
     }
     [defaultDataBase setObject:recentPhotos forKey:RECENT_PHOTOS];
-    if(![defaultDataBase synchronize]) NSLog(@"Error when save data to NSDefault...");
+    if(![defaultDataBase synchronize]) NSLog(@"Error when save data to NSDefault..."); 
+}
 
+
+#pragma mark - View lifecycle
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.scrollView.delegate = self;  
+    UIActivityIndicatorView * spinner = [SingletonNetworkSpinner sharedNetworkWaitSpinner];
+    spinner.center = self.view.center;
+    [self.view addSubview:spinner];
+    [spinner startAnimating];
+    [self saveToDatabase];
     
+    dispatch_queue_t downloadQueue = dispatch_queue_create("Image downloader", NULL);
+    dispatch_async(downloadQueue, ^{
+        NSData *photoData = [NSData dataWithContentsOfURL:self.photoURL];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (!photoData) {
+                [spinner stopAnimating];
+                UILabel *aLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 125.0f, 30.0f)];
+                aLabel.center = self.view.center;
+                aLabel.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin);
+                [self.view addSubview:aLabel];
+                aLabel.text = @"No Data";
+                aLabel.textAlignment = UITextAlignmentCenter;
+                [aLabel autoresizesSubviews];
+            } else{
+                self.imageView.image = [UIImage imageWithData:photoData];
+                self.scrollView.contentSize = self.imageView.image.size;
+                self.imageView.frame = CGRectMake(0,0, self.imageView.image.size.width, self.imageView.image.size.height);
+                
+                //Manually add subView to the UIViewController, and then add scrollView
+                [self.view addSubview:self.scrollView];
+                [self.scrollView addSubview:self.imageView];
+                
+                //set zoom size
+                self.scrollView.minimumZoomScale = 0.1;
+                self.scrollView.maximumZoomScale = 5.0;
+                
+                [spinner stopAnimating]; 
+            }
+        });
+    });
+    dispatch_release(downloadQueue);
 }
 
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.scrollView.delegate = self;
-    NSData *photoData = [NSData dataWithContentsOfURL:self.photoURL];
-    self.imageView.image = [UIImage imageWithData:photoData];
-    self.scrollView.contentSize = self.imageView.image.size;
-    self.imageView.frame = CGRectMake(0,0, self.imageView.image.size.width, self.imageView.image.size.height);
-    
-    //Manually add subView to the UIViewController, and then add scrollView
-    [self.view addSubview:self.scrollView];
-    [self.scrollView addSubview:self.imageView];
-    
-    
-    //set zoom size
-    self.scrollView.minimumZoomScale = 0.1;
-    self.scrollView.maximumZoomScale = 5.0;
-    
 }
 
 
