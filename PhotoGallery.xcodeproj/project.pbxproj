@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DBD3AC2414E0EC83008F94C3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD3AC2314E0EC83008F94C3 /* QuartzCore.framework */; };
-		DBD3AC3814E0FFA4008F94C3 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD3AC2E14E0FFA4008F94C3 /* EGORefreshTableHeaderView.m */; };
+		DBD3AC3814E0FFA4008F94C3 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD3AC2E14E0FFA4008F94C3 /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DBD3AC3914E0FFA4008F94C3 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD3AC3014E0FFA4008F94C3 /* blackArrow.png */; };
 		DBD3AC3A14E0FFA4008F94C3 /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD3AC3114E0FFA4008F94C3 /* blackArrow@2x.png */; };
 		DBD3AC3B14E0FFA4008F94C3 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD3AC3214E0FFA4008F94C3 /* blueArrow.png */; };

@@ -26,7 +26,20 @@
 #define MAX_PHOTOS_FOR_PLACE 8
 -(NSArray*) photos{
     if (!_photos) {
-        _photos = [FlickrFetcher photosInPlace:self.place maxResults:MAX_PHOTOS_FOR_PLACE];
+        
+        
+        
+        dispatch_queue_t  downloadPhotoInfos = dispatch_queue_create("getPhotosForPlace", NULL);
+        dispatch_async(downloadPhotoInfos, ^{
+            _photos = [FlickrFetcher photosInPlace:self.place maxResults:MAX_PHOTOS_FOR_PLACE];
+            dispatch_async(dispatch_get_current_queue(), ^{
+                //[self.tableView setNeedsDisplay];
+                [self.tableView   reloadData];
+            });
+        });
+        dispatch_release(downloadPhotoInfos);
+        
+        //_photos = [FlickrFetcher photosInPlace:self.place maxResults:MAX_PHOTOS_FOR_PLACE];
     }
     return _photos;
 }
@@ -60,13 +73,24 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    
+    if (_refreshHeaderView == nil) {
+		
+		EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
+		view.delegate = self;
+		[self.tableView addSubview:view];
+		_refreshHeaderView = view;
+		
+	}
+	
+	//  update the last update date
+	[_refreshHeaderView refreshLastUpdatedDate];
     
     
 
@@ -80,6 +104,8 @@
 - (void)viewDidUnload
 {
     self.photos = nil;
+    _refreshHeaderView=nil;
+
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -88,18 +114,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
 }
 
@@ -222,6 +236,77 @@
     return YES;
 }
 */
+
+
+#pragma mark -
+#pragma mark Data Source Loading / Reloading Methods
+
+- (void)reloadTableViewDataSource{
+	
+	//  should be calling your tableviews data source model to reload
+	//  put here just for demo
+    
+    
+    
+    dispatch_queue_t  downloadPhotoInfos = dispatch_queue_create("getPhotosForPlace", NULL);
+    dispatch_async(downloadPhotoInfos, ^{
+        self.photos = [FlickrFetcher photosInPlace:self.place maxResults:MAX_PHOTOS_FOR_PLACE];
+        dispatch_async(dispatch_get_current_queue(), ^{
+            [self.tableView reloadData];
+        });
+    });
+    dispatch_release(downloadPhotoInfos);
+    
+	_reloading = YES;
+	
+}
+
+- (void)doneLoadingTableViewData{
+	
+	//  model should call this when its done loading
+	_reloading = NO;
+	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
+	
+}
+
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{	
+	
+	[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+    
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+	
+	[_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+	
+}
+
+
+#pragma mark -
+#pragma mark EGORefreshTableHeaderDelegate Methods
+
+- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view{
+	
+	[self reloadTableViewDataSource];
+	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
+	
+}
+
+- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view{
+	
+	return _reloading; // should return if data source model is reloading
+	
+}
+
+- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view{
+	
+	return [NSDate date]; // should return date data source was last changed
+	
+}
 
 
 #pragma mark - Table view delegate
