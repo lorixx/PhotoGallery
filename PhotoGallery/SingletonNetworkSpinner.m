@@ -23,6 +23,7 @@
 -(id) init {
     self = [super init];
     self.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
+    self.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
     self.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin);
     return self;
 }

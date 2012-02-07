@@ -53,6 +53,7 @@
 {
     if (!_imageView) {
         _imageView =[[UIImageView alloc]init];
+
     }
     return _imageView;
 }
@@ -61,7 +62,6 @@
 {
     if (!_scrollView) {
         _scrollView = [[UIScrollView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-
     }
     return _scrollView;
 
@@ -112,6 +112,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+ 
     self.scrollView.delegate = self;  
     UIActivityIndicatorView * spinner = [SingletonNetworkSpinner sharedNetworkWaitSpinner];
     spinner.center = self.view.center;

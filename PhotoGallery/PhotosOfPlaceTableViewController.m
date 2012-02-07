@@ -9,6 +9,7 @@
 #import "PhotosOfPlaceTableViewController.h"
 #import "PhotoScrollViewController.h"
 #import "FlickrFetcher.h"
+#import <QuartzCore/QuartzCore.h>
 
 
 
@@ -87,6 +88,19 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -147,10 +161,24 @@
     
     cell.textLabel.text = title;
     cell.detailTextLabel.text = [photo objectForKey:OWNER_NAME_KEY];
+    cell.imageView.frame = CGRectMake(15, 6, 58, 58);
+    cell.imageView.layer.cornerRadius = 6.0;
+    cell.imageView.layer.masksToBounds = YES;
+    [cell bringSubviewToFront:[cell.imageView superview]];
+    
+    dispatch_queue_t downloadQueue = dispatch_queue_create("getThumbnail", NULL);
+    dispatch_async(downloadQueue, ^{
+        NSData *photoData = [NSData dataWithContentsOfURL:[FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatSquare]];
+        dispatch_async(dispatch_get_current_queue(), ^{
+            
+            UITableViewCell *cell  = [self.tableView cellForRowAtIndexPath:indexPath];
+            cell.imageView.image = [UIImage imageWithData:photoData];
+            [cell setNeedsLayout];
+        });
+    });
+    dispatch_release(downloadQueue);
     
     
-    NSData *photoData = [NSData dataWithContentsOfURL:[FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatSquare]];
-    cell.imageView.image = [UIImage imageWithData:photoData];
     
     
     return cell;
