@@ -14,7 +14,7 @@
 @interface PhotoScrollViewController() <UIScrollViewDelegate>
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
-@property (strong, nonatomic) NSDictionary *photo;
+
 @property (strong, nonatomic) NSURL *photoURL;
 @end
 
@@ -28,16 +28,16 @@
 @synthesize photo = _photo;
 @synthesize photoURL = _photoURL;
 
--(id)initWithPhoto: (NSDictionary*)photo
-{
-    self = [super init];
-    
-    //self = [self.storyboard instantiateInitialViewController];
-    if (self) {
-        self.photo = photo;  
-    }
-    return self;
-}
+//-(id)initWithPhoto: (NSDictionary*)photo
+//{
+//    self = [super init];
+//    
+//    //self = [self.storyboard instantiateInitialViewController];
+//    if (self) {
+//        self.photo = photo;  
+//    }
+//    return self;
+//}
 
 -(NSURL *)photoURL
 {
@@ -49,23 +49,22 @@
 }
 
 
--(UIImageView*) imageView
-{
-    if (!_imageView) {
-        _imageView =[[UIImageView alloc]init];
-
-    }
-    return _imageView;
-}
-
--(UIScrollView *)scrollView 
-{
-    if (!_scrollView) {
-        _scrollView = [[UIScrollView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-    }
-    return _scrollView;
-
-}
+//-(UIImageView*) imageView
+//{
+//    if (!_imageView) {
+//        _imageView =[[UIImageView alloc]init];
+//
+//    }
+//    return _imageView;
+//}
+//
+//-(UIScrollView *)scrollView 
+//{
+//    if (!_scrollView) {
+//        _scrollView = [[UIScrollView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+//    }
+//    return _scrollView;
+//}
 
 
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -73,9 +72,12 @@
 //    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 //    if (self) {
 //        // Custom initialization
+//         
 //    }
 //    return self;
 //}
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -139,13 +141,7 @@
                 self.scrollView.contentSize = self.imageView.image.size;
                 self.imageView.frame = CGRectMake(0,0, self.imageView.image.size.width, self.imageView.image.size.height);
                 
-                //Manually add subView to the UIViewController, and then add scrollView
-                [self.view addSubview:self.scrollView];
-                [self.scrollView addSubview:self.imageView];
                 
-                //set zoom size
-                self.scrollView.minimumZoomScale = 0.1;
-                self.scrollView.maximumZoomScale = 5.0;
                 
                 [spinner stopAnimating]; 
             }
@@ -170,9 +166,11 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    } else {
         return YES;
-
+    }
 }
 
 

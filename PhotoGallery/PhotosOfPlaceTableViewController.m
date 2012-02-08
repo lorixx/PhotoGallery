@@ -29,17 +29,17 @@
         
         
         
-        dispatch_queue_t  downloadPhotoInfos = dispatch_queue_create("getPhotosForPlace", NULL);
-        dispatch_async(downloadPhotoInfos, ^{
-            _photos = [FlickrFetcher photosInPlace:self.place maxResults:MAX_PHOTOS_FOR_PLACE];
-            dispatch_async(dispatch_get_current_queue(), ^{
-                //[self.tableView setNeedsDisplay];
-                [self.tableView   reloadData];
-            });
-        });
-        dispatch_release(downloadPhotoInfos);
+//        dispatch_queue_t  downloadPhotoInfos = dispatch_queue_create("getPhotosForPlace", NULL);
+//        dispatch_async(downloadPhotoInfos, ^{
+//            _photos = [FlickrFetcher photosInPlace:self.place maxResults:MAX_PHOTOS_FOR_PLACE];
+//            dispatch_async(dispatch_get_current_queue(), ^{
+//                //[self.tableView setNeedsDisplay];
+//                [self.tableView   reloadData];
+//            });
+//        });
+//        dispatch_release(downloadPhotoInfos);
         
-        //_photos = [FlickrFetcher photosInPlace:self.place maxResults:MAX_PHOTOS_FOR_PLACE];
+        _photos = [FlickrFetcher photosInPlace:self.place maxResults:MAX_PHOTOS_FOR_PLACE];
     }
     return _photos;
 }
@@ -180,6 +180,11 @@
     cell.imageView.layer.masksToBounds = YES;
     [cell bringSubviewToFront:[cell.imageView superview]];
     
+    
+    NSString *thePath = [[NSBundle mainBundle] pathForResource:@"Placeholder" ofType:@"png"];
+
+    cell.imageView.image = [[UIImage alloc]initWithContentsOfFile:thePath];
+    
     dispatch_queue_t downloadQueue = dispatch_queue_create("getThumbnail", NULL);
     dispatch_async(downloadQueue, ^{
         NSData *photoData = [NSData dataWithContentsOfURL:[FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatSquare]];
@@ -187,14 +192,18 @@
             
             UITableViewCell *cell  = [self.tableView cellForRowAtIndexPath:indexPath];
             cell.imageView.image = [UIImage imageWithData:photoData];
+            
+            //[self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
+            
+            
             [cell setNeedsLayout];
         });
     });
     dispatch_release(downloadQueue);
     
     
-    
-    
+//    NSData *photoData = [NSData dataWithContentsOfURL:[FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatSquare]];
+//    cell.imageView.image = [UIImage imageWithData:photoData];
     return cell;
 }
 
@@ -322,9 +331,13 @@
     //photoViewController.photo = [self.photos objectAtIndex:indexPath.row];
      
 
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"iPhone_MainStoryboard" bundle:nil];
+    PhotoScrollViewController *photoViewController = [storyboard instantiateViewControllerWithIdentifier:@"PhotoScrollViewController"];
     
+    //PhotoScrollViewController *photoViewController = [[PhotoScrollViewController alloc]initWithPhoto:[self.photos objectAtIndex:indexPath.row]];
     
-    PhotoScrollViewController *photoViewController = [[PhotoScrollViewController alloc]initWithPhoto:[self.photos objectAtIndex:indexPath.row]];
+    photoViewController.photo = [self.photos objectAtIndex:indexPath.row];
+    
     [self.navigationController pushViewController:photoViewController animated:YES];
 
 

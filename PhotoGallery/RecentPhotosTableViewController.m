@@ -137,7 +137,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PhotoScrollViewController *photoViewController = [[PhotoScrollViewController alloc]initWithPhoto:[self.recentPhotos objectAtIndex:indexPath.row]];
+    //PhotoScrollViewController *photoViewController = [[PhotoScrollViewController alloc]initWithPhoto:[self.recentPhotos objectAtIndex:indexPath.row]];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"iPhone_MainStoryboard" bundle:nil];
+    PhotoScrollViewController *photoViewController = [storyboard instantiateViewControllerWithIdentifier:@"PhotoScrollViewController"];
+    
+    photoViewController.photo = [self.recentPhotos objectAtIndex:indexPath.row];
+    
+    
     [self.navigationController pushViewController:photoViewController animated:YES];
 }
 

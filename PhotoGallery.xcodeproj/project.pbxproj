@@ -17,6 +17,7 @@
 		DBD3AC3E14E0FFA4008F94C3 /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD3AC3514E0FFA4008F94C3 /* grayArrow@2x.png */; };
 		DBD3AC3F14E0FFA4008F94C3 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD3AC3614E0FFA4008F94C3 /* whiteArrow.png */; };
 		DBD3AC4014E0FFA4008F94C3 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD3AC3714E0FFA4008F94C3 /* whiteArrow@2x.png */; };
+		DBD3AC4214E23A0B008F94C3 /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD3AC4114E23A0B008F94C3 /* Placeholder.png */; };
 		DBDC80A714DBA463006B4D73 /* RecentPhotosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDC80A614DBA463006B4D73 /* RecentPhotosTableViewController.m */; };
 		DBE45E7414DE1BCA00D1858B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE45E7314DE1BCA00D1858B /* MapKit.framework */; };
 		DBE45E7714DE1BD300D1858B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE45E7614DE1BD300D1858B /* CoreLocation.framework */; };
@@ -27,7 +28,7 @@
 		DBEEBEF214D795A900D992FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBEF014D795A900D992FD /* InfoPlist.strings */; };
 		DBEEBEF414D795A900D992FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBEF314D795A900D992FD /* main.m */; };
 		DBEEBEF814D795A900D992FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBEF714D795A900D992FD /* AppDelegate.m */; };
-		DBEEBEFB14D795A900D992FD /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBEF914D795A900D992FD /* MainStoryboard.storyboard */; };
+		DBEEBEFB14D795A900D992FD /* iPhone_MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBEF914D795A900D992FD /* iPhone_MainStoryboard.storyboard */; };
 		DBEEBF0014D795A900D992FD /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBEFF14D795A900D992FD /* first.png */; };
 		DBEEBF0214D795A900D992FD /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBF0114D795A900D992FD /* first@2x.png */; };
 		DBEEBF0714D795A900D992FD /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBF0614D795A900D992FD /* second.png */; };
@@ -51,6 +52,7 @@
 		DBD3AC3514E0FFA4008F94C3 /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
 		DBD3AC3614E0FFA4008F94C3 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
 		DBD3AC3714E0FFA4008F94C3 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
+		DBD3AC4114E23A0B008F94C3 /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
 		DBDC80A514DBA463006B4D73 /* RecentPhotosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentPhotosTableViewController.h; sourceTree = "<group>"; };
 		DBDC80A614DBA463006B4D73 /* RecentPhotosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentPhotosTableViewController.m; sourceTree = "<group>"; };
 		DBE45E7314DE1BCA00D1858B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -67,7 +69,7 @@
 		DBEEBEF514D795A900D992FD /* PhotoGallery-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhotoGallery-Prefix.pch"; sourceTree = "<group>"; };
 		DBEEBEF614D795A900D992FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DBEEBEF714D795A900D992FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DBEEBEFA14D795A900D992FD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		DBEEBEFA14D795A900D992FD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhone_MainStoryboard.storyboard; sourceTree = "<group>"; };
 		DBEEBEFF14D795A900D992FD /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		DBEEBF0114D795A900D992FD /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		DBEEBF0614D795A900D992FD /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
@@ -182,7 +184,7 @@
 				DBEEBF3A14DA775800D992FD /* PhotoScrollViewController.m */,
 				DBEEBEF614D795A900D992FD /* AppDelegate.h */,
 				DBEEBEF714D795A900D992FD /* AppDelegate.m */,
-				DBEEBEF914D795A900D992FD /* MainStoryboard.storyboard */,
+				DBEEBEF914D795A900D992FD /* iPhone_MainStoryboard.storyboard */,
 				DBEEBEFF14D795A900D992FD /* first.png */,
 				DBEEBF0114D795A900D992FD /* first@2x.png */,
 				DBEEBF0614D795A900D992FD /* second.png */,
@@ -204,6 +206,7 @@
 		DBEEBEEE14D795A900D992FD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DBD3AC4114E23A0B008F94C3 /* Placeholder.png */,
 				DBEEBF3C14DA7A4E00D992FD /* 16598983.jpeg */,
 				DBEEBEEF14D795A900D992FD /* PhotoGallery-Info.plist */,
 				DBEEBEF014D795A900D992FD /* InfoPlist.strings */,
@@ -264,7 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBEEBEF214D795A900D992FD /* InfoPlist.strings in Resources */,
-				DBEEBEFB14D795A900D992FD /* MainStoryboard.storyboard in Resources */,
+				DBEEBEFB14D795A900D992FD /* iPhone_MainStoryboard.storyboard in Resources */,
 				DBEEBF0014D795A900D992FD /* first.png in Resources */,
 				DBEEBF0214D795A900D992FD /* first@2x.png in Resources */,
 				DBEEBF0714D795A900D992FD /* second.png in Resources */,
@@ -278,6 +281,7 @@
 				DBD3AC3E14E0FFA4008F94C3 /* grayArrow@2x.png in Resources */,
 				DBD3AC3F14E0FFA4008F94C3 /* whiteArrow.png in Resources */,
 				DBD3AC4014E0FFA4008F94C3 /* whiteArrow@2x.png in Resources */,
+				DBD3AC4214E23A0B008F94C3 /* Placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,12 +315,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		DBEEBEF914D795A900D992FD /* MainStoryboard.storyboard */ = {
+		DBEEBEF914D795A900D992FD /* iPhone_MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DBEEBEFA14D795A900D992FD /* en */,
 			);
-			name = MainStoryboard.storyboard;
+			name = iPhone_MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -373,7 +377,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoGallery/PhotoGallery-Prefix.pch";
 				INFOPLIST_FILE = "PhotoGallery/PhotoGallery-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -384,7 +390,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoGallery/PhotoGallery-Prefix.pch";
 				INFOPLIST_FILE = "PhotoGallery/PhotoGallery-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

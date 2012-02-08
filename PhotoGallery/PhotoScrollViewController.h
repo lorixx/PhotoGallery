@@ -12,6 +12,9 @@
 
 @interface PhotoScrollViewController : UIViewController
 
--(id)initWithPhoto: (NSDictionary*)photo;
+
+@property (strong, nonatomic) NSDictionary *photo;
+
+//-(id)initWithPhoto: (NSDictionary*)photo;
 
 @end
