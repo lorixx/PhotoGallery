@@ -8,13 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-#define RECENT_PHOTOS @"recentPhotos"
 
 @interface PhotoScrollViewController : UIViewController
 
-
 @property (strong, nonatomic) NSDictionary *photo;
-
-//-(id)initWithPhoto: (NSDictionary*)photo;
 
 @end

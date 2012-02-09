@@ -28,16 +28,6 @@
 @synthesize photo = _photo;
 @synthesize photoURL = _photoURL;
 
-//-(id)initWithPhoto: (NSDictionary*)photo
-//{
-//    self = [super init];
-//    
-//    //self = [self.storyboard instantiateInitialViewController];
-//    if (self) {
-//        self.photo = photo;  
-//    }
-//    return self;
-//}
 
 -(NSURL *)photoURL
 {
@@ -47,37 +37,6 @@
     }
     return _photoURL;
 }
-
-
-//-(UIImageView*) imageView
-//{
-//    if (!_imageView) {
-//        _imageView =[[UIImageView alloc]init];
-//
-//    }
-//    return _imageView;
-//}
-//
-//-(UIScrollView *)scrollView 
-//{
-//    if (!_scrollView) {
-//        _scrollView = [[UIScrollView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-//    }
-//    return _scrollView;
-//}
-
-
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
-//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    if (self) {
-//        // Custom initialization
-//         
-//    }
-//    return self;
-//}
-
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -120,7 +79,7 @@
     spinner.center = self.view.center;
     [self.view addSubview:spinner];
     [spinner startAnimating];
-    [self saveToDatabase];
+    [self saveToDatabase];  //save this photo to NSUserDefault
     
     dispatch_queue_t downloadQueue = dispatch_queue_create("Image downloader", NULL);
     dispatch_async(downloadQueue, ^{

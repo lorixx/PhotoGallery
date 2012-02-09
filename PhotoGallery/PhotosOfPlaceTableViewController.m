@@ -14,7 +14,6 @@
 
 
 @interface PhotosOfPlaceTableViewController()
-@property (nonatomic, strong) NSArray *photos;
 @end
 
 
@@ -22,28 +21,6 @@
 
 @synthesize place = _place;
 @synthesize photos = _photos;
-
-#define MAX_PHOTOS_FOR_PLACE 8
--(NSArray*) photos{
-    if (!_photos) {
-        
-        
-        
-//        dispatch_queue_t  downloadPhotoInfos = dispatch_queue_create("getPhotosForPlace", NULL);
-//        dispatch_async(downloadPhotoInfos, ^{
-//            _photos = [FlickrFetcher photosInPlace:self.place maxResults:MAX_PHOTOS_FOR_PLACE];
-//            dispatch_async(dispatch_get_current_queue(), ^{
-//                //[self.tableView setNeedsDisplay];
-//                [self.tableView   reloadData];
-//            });
-//        });
-//        dispatch_release(downloadPhotoInfos);
-        
-        _photos = [FlickrFetcher photosInPlace:self.place maxResults:MAX_PHOTOS_FOR_PLACE];
-    }
-    return _photos;
-}
-
 
 
 -(id) initWithPlace: (NSDictionary*)currentPlace
@@ -188,22 +165,15 @@
     dispatch_queue_t downloadQueue = dispatch_queue_create("getThumbnail", NULL);
     dispatch_async(downloadQueue, ^{
         NSData *photoData = [NSData dataWithContentsOfURL:[FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatSquare]];
-        dispatch_async(dispatch_get_current_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
             
             UITableViewCell *cell  = [self.tableView cellForRowAtIndexPath:indexPath];
             cell.imageView.image = [UIImage imageWithData:photoData];
-            
-            //[self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
-            
-            
-            [cell setNeedsLayout];
+            [cell setNeedsLayout];  //call this to reload image for this cell
         });
     });
     dispatch_release(downloadQueue);
     
-    
-//    NSData *photoData = [NSData dataWithContentsOfURL:[FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatSquare]];
-//    cell.imageView.image = [UIImage imageWithData:photoData];
     return cell;
 }
 
@@ -255,12 +225,10 @@
 	//  should be calling your tableviews data source model to reload
 	//  put here just for demo
     
-    
-    
     dispatch_queue_t  downloadPhotoInfos = dispatch_queue_create("getPhotosForPlace", NULL);
     dispatch_async(downloadPhotoInfos, ^{
         self.photos = [FlickrFetcher photosInPlace:self.place maxResults:MAX_PHOTOS_FOR_PLACE];
-        dispatch_async(dispatch_get_current_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
     });
@@ -322,28 +290,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-    
-//    UIStoryboard *storyboard = self.storyboard;
-//    PhotoScrollViewController *photoViewController = [storyboard instantiateViewControllerWithIdentifier:@"PhotoScrollViewController"];
-//    
-//    // configure the new view controller explicitly here.
-    //photoViewController.photo = [self.photos objectAtIndex:indexPath.row];
-     
-
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"iPhone_MainStoryboard" bundle:nil];
     PhotoScrollViewController *photoViewController = [storyboard instantiateViewControllerWithIdentifier:@"PhotoScrollViewController"];
-    
-    //PhotoScrollViewController *photoViewController = [[PhotoScrollViewController alloc]initWithPhoto:[self.photos objectAtIndex:indexPath.row]];
-    
     photoViewController.photo = [self.photos objectAtIndex:indexPath.row];
-    
     [self.navigationController pushViewController:photoViewController animated:YES];
-
-
-    //[self performSegueWithIdentifier:@"photoView" sender: self];
-
-    
 }
 
 @end

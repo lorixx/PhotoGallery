@@ -11,8 +11,8 @@
 
 
 
-#define OWNER_NAME_KEY @"ownername"
-#define PHOTO_TITLE_KEY @"title"
+
+
 @interface PhotosOfPlaceTableViewController : UITableViewController <EGORefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource>{
 
     EGORefreshTableHeaderView *_refreshHeaderView;
@@ -24,6 +24,7 @@
 
 
 @property (nonatomic, weak) NSDictionary *place;
+@property (nonatomic, strong) NSArray *photos;
 
 -(id) initWithPlace: (NSDictionary*)currentPlace;
 
