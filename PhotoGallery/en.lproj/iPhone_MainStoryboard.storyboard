@@ -29,7 +29,9 @@
                             <outlet property="delegate" destination="94q-fz-NSQ" id="cYQ-w4-CiV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Places" id="NRE-TF-um7"/>
+                    <navigationItem key="navigationItem" title="Places" id="NRE-TF-um7">
+                        <barButtonItem key="backBarButtonItem" title="Places" id="2cB-8f-T9p"/>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackTranslucent" prompted="NO"/>
                     <connections>
                         <segue destination="7Yk-E7-M1E" kind="push" identifier="going to show photos" id="wOE-5P-Kc4"/>
@@ -78,7 +80,9 @@
                             <outlet property="delegate" destination="7Yk-E7-M1E" id="2Yt-9z-y71"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Photos" id="chE-UX-QBU"/>
+                    <navigationItem key="navigationItem" title="Photos" id="chE-UX-QBU">
+                        <barButtonItem key="backBarButtonItem" title="Photos" id="Dv4-Fe-8NA"/>
+                    </navigationItem>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1535" y="-138"/>
