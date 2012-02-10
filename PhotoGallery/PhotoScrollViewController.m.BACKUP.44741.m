@@ -49,6 +49,26 @@
     return _photoURL;
 }
 
+<<<<<<< HEAD
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+}
+
+
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+=======
+>>>>>>> photoGallery
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.

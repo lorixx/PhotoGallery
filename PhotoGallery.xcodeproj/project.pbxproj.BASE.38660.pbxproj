@@ -7,58 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DBD3AC2414E0EC83008F94C3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD3AC2314E0EC83008F94C3 /* QuartzCore.framework */; };
-		DBD3AC3814E0FFA4008F94C3 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD3AC2E14E0FFA4008F94C3 /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		DBD3AC3914E0FFA4008F94C3 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD3AC3014E0FFA4008F94C3 /* blackArrow.png */; };
-		DBD3AC3A14E0FFA4008F94C3 /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD3AC3114E0FFA4008F94C3 /* blackArrow@2x.png */; };
-		DBD3AC3B14E0FFA4008F94C3 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD3AC3214E0FFA4008F94C3 /* blueArrow.png */; };
-		DBD3AC3C14E0FFA4008F94C3 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD3AC3314E0FFA4008F94C3 /* blueArrow@2x.png */; };
-		DBD3AC3D14E0FFA4008F94C3 /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD3AC3414E0FFA4008F94C3 /* grayArrow.png */; };
-		DBD3AC3E14E0FFA4008F94C3 /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD3AC3514E0FFA4008F94C3 /* grayArrow@2x.png */; };
-		DBD3AC3F14E0FFA4008F94C3 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD3AC3614E0FFA4008F94C3 /* whiteArrow.png */; };
-		DBD3AC4014E0FFA4008F94C3 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD3AC3714E0FFA4008F94C3 /* whiteArrow@2x.png */; };
-		DBD3AC4214E23A0B008F94C3 /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD3AC4114E23A0B008F94C3 /* Placeholder.png */; };
-		DBDC80A714DBA463006B4D73 /* RecentPhotosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDC80A614DBA463006B4D73 /* RecentPhotosTableViewController.m */; };
-		DBE45E7414DE1BCA00D1858B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE45E7314DE1BCA00D1858B /* MapKit.framework */; };
-		DBE45E7714DE1BD300D1858B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE45E7614DE1BD300D1858B /* CoreLocation.framework */; };
-		DBE45E7A14DE3BB900D1858B /* SingletonNetworkSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE45E7914DE3BB900D1858B /* SingletonNetworkSpinner.m */; };
 		DBEEBEE814D795A900D992FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBEEBEE714D795A900D992FD /* UIKit.framework */; };
 		DBEEBEEA14D795A900D992FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBEEBEE914D795A900D992FD /* Foundation.framework */; };
 		DBEEBEEC14D795A900D992FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBEEBEEB14D795A900D992FD /* CoreGraphics.framework */; };
 		DBEEBEF214D795A900D992FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBEF014D795A900D992FD /* InfoPlist.strings */; };
 		DBEEBEF414D795A900D992FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBEF314D795A900D992FD /* main.m */; };
 		DBEEBEF814D795A900D992FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBEF714D795A900D992FD /* AppDelegate.m */; };
-		DBEEBEFB14D795A900D992FD /* iPhone_MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBEF914D795A900D992FD /* iPhone_MainStoryboard.storyboard */; };
+		DBEEBEFB14D795A900D992FD /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBEF914D795A900D992FD /* MainStoryboard.storyboard */; };
+		DBEEBEFE14D795A900D992FD /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBEFD14D795A900D992FD /* FirstViewController.m */; };
 		DBEEBF0014D795A900D992FD /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBEFF14D795A900D992FD /* first.png */; };
 		DBEEBF0214D795A900D992FD /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBF0114D795A900D992FD /* first@2x.png */; };
+		DBEEBF0514D795A900D992FD /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBF0414D795A900D992FD /* SecondViewController.m */; };
 		DBEEBF0714D795A900D992FD /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBF0614D795A900D992FD /* second.png */; };
 		DBEEBF0914D795A900D992FD /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBF0814D795A900D992FD /* second@2x.png */; };
 		DBEEBF1214D7966500D992FD /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBF1114D7966500D992FD /* FlickrFetcher.m */; };
 		DBEEBF1614D7B10700D992FD /* ListOfPlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBF1414D7B10700D992FD /* ListOfPlacesTableViewController.m */; };
 		DBEEBF1A14D905E100D992FD /* PhotosOfPlaceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBF1914D905E100D992FD /* PhotosOfPlaceTableViewController.m */; };
-		DBEEBF3B14DA775800D992FD /* PhotoScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBF3A14DA775800D992FD /* PhotoScrollViewController.m */; };
-		DBEEBF3D14DA7A4E00D992FD /* 16598983.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBF3C14DA7A4E00D992FD /* 16598983.jpeg */; };
+		DBEEBF2114D9126A00D992FD /* PhotoScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBF2014D9126A00D992FD /* PhotoScrollViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DBD3AC2314E0EC83008F94C3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		DBD3AC2D14E0FFA4008F94C3 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
-		DBD3AC2E14E0FFA4008F94C3 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
-		DBD3AC3014E0FFA4008F94C3 /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
-		DBD3AC3114E0FFA4008F94C3 /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackArrow@2x.png"; sourceTree = "<group>"; };
-		DBD3AC3214E0FFA4008F94C3 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
-		DBD3AC3314E0FFA4008F94C3 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
-		DBD3AC3414E0FFA4008F94C3 /* grayArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayArrow.png; sourceTree = "<group>"; };
-		DBD3AC3514E0FFA4008F94C3 /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
-		DBD3AC3614E0FFA4008F94C3 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
-		DBD3AC3714E0FFA4008F94C3 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
-		DBD3AC4114E23A0B008F94C3 /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
-		DBDC80A514DBA463006B4D73 /* RecentPhotosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentPhotosTableViewController.h; sourceTree = "<group>"; };
-		DBDC80A614DBA463006B4D73 /* RecentPhotosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentPhotosTableViewController.m; sourceTree = "<group>"; };
-		DBE45E7314DE1BCA00D1858B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		DBE45E7614DE1BD300D1858B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		DBE45E7814DE3BB900D1858B /* SingletonNetworkSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonNetworkSpinner.h; sourceTree = "<group>"; };
-		DBE45E7914DE3BB900D1858B /* SingletonNetworkSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonNetworkSpinner.m; sourceTree = "<group>"; };
 		DBEEBEE314D795A900D992FD /* PhotoGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBEEBEE714D795A900D992FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DBEEBEE914D795A900D992FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -69,9 +37,13 @@
 		DBEEBEF514D795A900D992FD /* PhotoGallery-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhotoGallery-Prefix.pch"; sourceTree = "<group>"; };
 		DBEEBEF614D795A900D992FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DBEEBEF714D795A900D992FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DBEEBEFA14D795A900D992FD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhone_MainStoryboard.storyboard; sourceTree = "<group>"; };
+		DBEEBEFA14D795A900D992FD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		DBEEBEFC14D795A900D992FD /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		DBEEBEFD14D795A900D992FD /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		DBEEBEFF14D795A900D992FD /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		DBEEBF0114D795A900D992FD /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		DBEEBF0314D795A900D992FD /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		DBEEBF0414D795A900D992FD /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		DBEEBF0614D795A900D992FD /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		DBEEBF0814D795A900D992FD /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		DBEEBF0F14D7966500D992FD /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
@@ -81,9 +53,8 @@
 		DBEEBF1414D7B10700D992FD /* ListOfPlacesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListOfPlacesTableViewController.m; sourceTree = "<group>"; };
 		DBEEBF1814D905E000D992FD /* PhotosOfPlaceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosOfPlaceTableViewController.h; sourceTree = "<group>"; };
 		DBEEBF1914D905E100D992FD /* PhotosOfPlaceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosOfPlaceTableViewController.m; sourceTree = "<group>"; };
-		DBEEBF3914DA775800D992FD /* PhotoScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoScrollViewController.h; sourceTree = "<group>"; };
-		DBEEBF3A14DA775800D992FD /* PhotoScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoScrollViewController.m; sourceTree = "<group>"; };
-		DBEEBF3C14DA7A4E00D992FD /* 16598983.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 16598983.jpeg; sourceTree = "<group>"; };
+		DBEEBF1F14D9126900D992FD /* PhotoScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoScrollViewController.h; sourceTree = "<group>"; };
+		DBEEBF2014D9126A00D992FD /* PhotoScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoScrollViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,9 +62,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBD3AC2414E0EC83008F94C3 /* QuartzCore.framework in Frameworks */,
-				DBE45E7714DE1BD300D1858B /* CoreLocation.framework in Frameworks */,
-				DBE45E7414DE1BCA00D1858B /* MapKit.framework in Frameworks */,
 				DBEEBEE814D795A900D992FD /* UIKit.framework in Frameworks */,
 				DBEEBEEA14D795A900D992FD /* Foundation.framework in Frameworks */,
 				DBEEBEEC14D795A900D992FD /* CoreGraphics.framework in Frameworks */,
@@ -103,47 +71,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DBD3AC2A14E0FFA4008F94C3 /* EGOTableViewPullRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				DBD3AC2B14E0FFA4008F94C3 /* Classes */,
-				DBD3AC2F14E0FFA4008F94C3 /* Resources */,
-			);
-			path = EGOTableViewPullRefresh;
-			sourceTree = "<group>";
-		};
-		DBD3AC2B14E0FFA4008F94C3 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				DBD3AC2C14E0FFA4008F94C3 /* View */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		DBD3AC2C14E0FFA4008F94C3 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				DBD3AC2D14E0FFA4008F94C3 /* EGORefreshTableHeaderView.h */,
-				DBD3AC2E14E0FFA4008F94C3 /* EGORefreshTableHeaderView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		DBD3AC2F14E0FFA4008F94C3 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				DBD3AC3014E0FFA4008F94C3 /* blackArrow.png */,
-				DBD3AC3114E0FFA4008F94C3 /* blackArrow@2x.png */,
-				DBD3AC3214E0FFA4008F94C3 /* blueArrow.png */,
-				DBD3AC3314E0FFA4008F94C3 /* blueArrow@2x.png */,
-				DBD3AC3414E0FFA4008F94C3 /* grayArrow.png */,
-				DBD3AC3514E0FFA4008F94C3 /* grayArrow@2x.png */,
-				DBD3AC3614E0FFA4008F94C3 /* whiteArrow.png */,
-				DBD3AC3714E0FFA4008F94C3 /* whiteArrow@2x.png */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		DBEEBED814D795A900D992FD = {
 			isa = PBXGroup;
 			children = (
@@ -164,9 +91,6 @@
 		DBEEBEE614D795A900D992FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DBD3AC2314E0EC83008F94C3 /* QuartzCore.framework */,
-				DBE45E7614DE1BD300D1858B /* CoreLocation.framework */,
-				DBE45E7314DE1BCA00D1858B /* MapKit.framework */,
 				DBEEBEE714D795A900D992FD /* UIKit.framework */,
 				DBEEBEE914D795A900D992FD /* Foundation.framework */,
 				DBEEBEEB14D795A900D992FD /* CoreGraphics.framework */,
@@ -177,16 +101,15 @@
 		DBEEBEED14D795A900D992FD /* PhotoGallery */ = {
 			isa = PBXGroup;
 			children = (
-				DBD3AC2A14E0FFA4008F94C3 /* EGOTableViewPullRefresh */,
-				DBDC80A514DBA463006B4D73 /* RecentPhotosTableViewController.h */,
-				DBDC80A614DBA463006B4D73 /* RecentPhotosTableViewController.m */,
-				DBEEBF3914DA775800D992FD /* PhotoScrollViewController.h */,
-				DBEEBF3A14DA775800D992FD /* PhotoScrollViewController.m */,
 				DBEEBEF614D795A900D992FD /* AppDelegate.h */,
 				DBEEBEF714D795A900D992FD /* AppDelegate.m */,
-				DBEEBEF914D795A900D992FD /* iPhone_MainStoryboard.storyboard */,
+				DBEEBEF914D795A900D992FD /* MainStoryboard.storyboard */,
+				DBEEBEFC14D795A900D992FD /* FirstViewController.h */,
+				DBEEBEFD14D795A900D992FD /* FirstViewController.m */,
 				DBEEBEFF14D795A900D992FD /* first.png */,
 				DBEEBF0114D795A900D992FD /* first@2x.png */,
+				DBEEBF0314D795A900D992FD /* SecondViewController.h */,
+				DBEEBF0414D795A900D992FD /* SecondViewController.m */,
 				DBEEBF0614D795A900D992FD /* second.png */,
 				DBEEBF0814D795A900D992FD /* second@2x.png */,
 				DBEEBF0F14D7966500D992FD /* FlickrAPIKey.h */,
@@ -196,12 +119,9 @@
 				DBEEBF1414D7B10700D992FD /* ListOfPlacesTableViewController.m */,
 				DBEEBF1814D905E000D992FD /* PhotosOfPlaceTableViewController.h */,
 				DBEEBF1914D905E100D992FD /* PhotosOfPlaceTableViewController.m */,
-				DBE45E7814DE3BB900D1858B /* SingletonNetworkSpinner.h */,
-				DBE45E7914DE3BB900D1858B /* SingletonNetworkSpinner.m */,
+				DBEEBF1F14D9126900D992FD /* PhotoScrollViewController.h */,
+				DBEEBF2014D9126A00D992FD /* PhotoScrollViewController.m */,
 				DBEEBEEE14D795A900D992FD /* Supporting Files */,
-				DBEEBF2614DA594F00D992FD /* PhotoScrollViewController2.h */,
-				DBEEBF2714DA594F00D992FD /* PhotoScrollViewController2.m */,
-				DBEEBF2814DA595000D992FD /* PhotoScrollViewController2.xib */,
 			);
 			path = PhotoGallery;
 			sourceTree = "<group>";
@@ -209,8 +129,6 @@
 		DBEEBEEE14D795A900D992FD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DBD3AC4114E23A0B008F94C3 /* Placeholder.png */,
-				DBEEBF3C14DA7A4E00D992FD /* 16598983.jpeg */,
 				DBEEBEEF14D795A900D992FD /* PhotoGallery-Info.plist */,
 				DBEEBEF014D795A900D992FD /* InfoPlist.strings */,
 				DBEEBEF314D795A900D992FD /* main.m */,
@@ -270,21 +188,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBEEBEF214D795A900D992FD /* InfoPlist.strings in Resources */,
-				DBEEBEFB14D795A900D992FD /* iPhone_MainStoryboard.storyboard in Resources */,
+				DBEEBEFB14D795A900D992FD /* MainStoryboard.storyboard in Resources */,
 				DBEEBF0014D795A900D992FD /* first.png in Resources */,
 				DBEEBF0214D795A900D992FD /* first@2x.png in Resources */,
 				DBEEBF0714D795A900D992FD /* second.png in Resources */,
 				DBEEBF0914D795A900D992FD /* second@2x.png in Resources */,
-				DBEEBF3D14DA7A4E00D992FD /* 16598983.jpeg in Resources */,
-				DBD3AC3914E0FFA4008F94C3 /* blackArrow.png in Resources */,
-				DBD3AC3A14E0FFA4008F94C3 /* blackArrow@2x.png in Resources */,
-				DBD3AC3B14E0FFA4008F94C3 /* blueArrow.png in Resources */,
-				DBD3AC3C14E0FFA4008F94C3 /* blueArrow@2x.png in Resources */,
-				DBD3AC3D14E0FFA4008F94C3 /* grayArrow.png in Resources */,
-				DBD3AC3E14E0FFA4008F94C3 /* grayArrow@2x.png in Resources */,
-				DBD3AC3F14E0FFA4008F94C3 /* whiteArrow.png in Resources */,
-				DBD3AC4014E0FFA4008F94C3 /* whiteArrow@2x.png in Resources */,
-				DBD3AC4214E23A0B008F94C3 /* Placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,13 +205,12 @@
 			files = (
 				DBEEBEF414D795A900D992FD /* main.m in Sources */,
 				DBEEBEF814D795A900D992FD /* AppDelegate.m in Sources */,
+				DBEEBEFE14D795A900D992FD /* FirstViewController.m in Sources */,
+				DBEEBF0514D795A900D992FD /* SecondViewController.m in Sources */,
 				DBEEBF1214D7966500D992FD /* FlickrFetcher.m in Sources */,
 				DBEEBF1614D7B10700D992FD /* ListOfPlacesTableViewController.m in Sources */,
 				DBEEBF1A14D905E100D992FD /* PhotosOfPlaceTableViewController.m in Sources */,
-				DBEEBF3B14DA775800D992FD /* PhotoScrollViewController.m in Sources */,
-				DBDC80A714DBA463006B4D73 /* RecentPhotosTableViewController.m in Sources */,
-				DBE45E7A14DE3BB900D1858B /* SingletonNetworkSpinner.m in Sources */,
-				DBD3AC3814E0FFA4008F94C3 /* EGORefreshTableHeaderView.m in Sources */,
+				DBEEBF2114D9126A00D992FD /* PhotoScrollViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,12 +225,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		DBEEBEF914D795A900D992FD /* iPhone_MainStoryboard.storyboard */ = {
+		DBEEBEF914D795A900D992FD /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DBEEBEFA14D795A900D992FD /* en */,
 			);
-			name = iPhone_MainStoryboard.storyboard;
+			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -380,9 +287,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoGallery/PhotoGallery-Prefix.pch";
 				INFOPLIST_FILE = "PhotoGallery/PhotoGallery-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -393,9 +298,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoGallery/PhotoGallery-Prefix.pch";
 				INFOPLIST_FILE = "PhotoGallery/PhotoGallery-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -419,7 +322,6 @@
 				DBEEBF0E14D795A900D992FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

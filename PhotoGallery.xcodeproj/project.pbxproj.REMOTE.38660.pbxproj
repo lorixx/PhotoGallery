@@ -199,9 +199,6 @@
 				DBE45E7814DE3BB900D1858B /* SingletonNetworkSpinner.h */,
 				DBE45E7914DE3BB900D1858B /* SingletonNetworkSpinner.m */,
 				DBEEBEEE14D795A900D992FD /* Supporting Files */,
-				DBEEBF2614DA594F00D992FD /* PhotoScrollViewController2.h */,
-				DBEEBF2714DA594F00D992FD /* PhotoScrollViewController2.m */,
-				DBEEBF2814DA595000D992FD /* PhotoScrollViewController2.xib */,
 			);
 			path = PhotoGallery;
 			sourceTree = "<group>";

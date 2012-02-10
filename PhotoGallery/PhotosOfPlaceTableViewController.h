@@ -7,12 +7,28 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EGORefreshTableHeaderView.h"
 
-@interface PhotosOfPlaceTableViewController : UITableViewController
+
+
+
+
+@interface PhotosOfPlaceTableViewController : UITableViewController <EGORefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource>{
+
+    EGORefreshTableHeaderView *_refreshHeaderView;
+
+//  Reloading var should really be your tableviews datasource
+//  Putting it here for demo purposes 
+    BOOL _reloading;
+}
+
 
 @property (nonatomic, weak) NSDictionary *place;
+@property (nonatomic, strong) NSArray *photos;
 
 -(id) initWithPlace: (NSDictionary*)currentPlace;
 
+- (void)reloadTableViewDataSource;
+- (void)doneLoadingTableViewData;
 
 @end

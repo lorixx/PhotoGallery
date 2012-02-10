@@ -36,8 +36,14 @@
 		DBEEBF1214D7966500D992FD /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBF1114D7966500D992FD /* FlickrFetcher.m */; };
 		DBEEBF1614D7B10700D992FD /* ListOfPlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBF1414D7B10700D992FD /* ListOfPlacesTableViewController.m */; };
 		DBEEBF1A14D905E100D992FD /* PhotosOfPlaceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBF1914D905E100D992FD /* PhotosOfPlaceTableViewController.m */; };
+<<<<<<< HEAD
+		DBEEBF2114D9126A00D992FD /* PhotoScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBF2014D9126A00D992FD /* PhotoScrollViewController.m */; };
+		DBEEBF2914DA595000D992FD /* PhotoScrollViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBF2714DA594F00D992FD /* PhotoScrollViewController2.m */; };
+		DBEEBF2A14DA595000D992FD /* PhotoScrollViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBF2814DA595000D992FD /* PhotoScrollViewController2.xib */; };
+=======
 		DBEEBF3B14DA775800D992FD /* PhotoScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBF3A14DA775800D992FD /* PhotoScrollViewController.m */; };
 		DBEEBF3D14DA7A4E00D992FD /* 16598983.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DBEEBF3C14DA7A4E00D992FD /* 16598983.jpeg */; };
+>>>>>>> photoGallery
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,9 +87,17 @@
 		DBEEBF1414D7B10700D992FD /* ListOfPlacesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListOfPlacesTableViewController.m; sourceTree = "<group>"; };
 		DBEEBF1814D905E000D992FD /* PhotosOfPlaceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosOfPlaceTableViewController.h; sourceTree = "<group>"; };
 		DBEEBF1914D905E100D992FD /* PhotosOfPlaceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosOfPlaceTableViewController.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		DBEEBF1F14D9126900D992FD /* PhotoScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoScrollViewController.h; sourceTree = "<group>"; };
+		DBEEBF2014D9126A00D992FD /* PhotoScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoScrollViewController.m; sourceTree = "<group>"; };
+		DBEEBF2614DA594F00D992FD /* PhotoScrollViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoScrollViewController2.h; sourceTree = "<group>"; };
+		DBEEBF2714DA594F00D992FD /* PhotoScrollViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoScrollViewController2.m; sourceTree = "<group>"; };
+		DBEEBF2814DA595000D992FD /* PhotoScrollViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoScrollViewController2.xib; sourceTree = "<group>"; };
+=======
 		DBEEBF3914DA775800D992FD /* PhotoScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoScrollViewController.h; sourceTree = "<group>"; };
 		DBEEBF3A14DA775800D992FD /* PhotoScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoScrollViewController.m; sourceTree = "<group>"; };
 		DBEEBF3C14DA7A4E00D992FD /* 16598983.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 16598983.jpeg; sourceTree = "<group>"; };
+>>>>>>> photoGallery
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +289,9 @@
 				DBEEBF0214D795A900D992FD /* first@2x.png in Resources */,
 				DBEEBF0714D795A900D992FD /* second.png in Resources */,
 				DBEEBF0914D795A900D992FD /* second@2x.png in Resources */,
+<<<<<<< HEAD
+				DBEEBF2A14DA595000D992FD /* PhotoScrollViewController2.xib in Resources */,
+=======
 				DBEEBF3D14DA7A4E00D992FD /* 16598983.jpeg in Resources */,
 				DBD3AC3914E0FFA4008F94C3 /* blackArrow.png in Resources */,
 				DBD3AC3A14E0FFA4008F94C3 /* blackArrow@2x.png in Resources */,
@@ -285,6 +302,7 @@
 				DBD3AC3F14E0FFA4008F94C3 /* whiteArrow.png in Resources */,
 				DBD3AC4014E0FFA4008F94C3 /* whiteArrow@2x.png in Resources */,
 				DBD3AC4214E23A0B008F94C3 /* Placeholder.png in Resources */,
+>>>>>>> photoGallery
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,10 +318,15 @@
 				DBEEBF1214D7966500D992FD /* FlickrFetcher.m in Sources */,
 				DBEEBF1614D7B10700D992FD /* ListOfPlacesTableViewController.m in Sources */,
 				DBEEBF1A14D905E100D992FD /* PhotosOfPlaceTableViewController.m in Sources */,
+<<<<<<< HEAD
+				DBEEBF2114D9126A00D992FD /* PhotoScrollViewController.m in Sources */,
+				DBEEBF2914DA595000D992FD /* PhotoScrollViewController2.m in Sources */,
+=======
 				DBEEBF3B14DA775800D992FD /* PhotoScrollViewController.m in Sources */,
 				DBDC80A714DBA463006B4D73 /* RecentPhotosTableViewController.m in Sources */,
 				DBE45E7A14DE3BB900D1858B /* SingletonNetworkSpinner.m in Sources */,
 				DBD3AC3814E0FFA4008F94C3 /* EGORefreshTableHeaderView.m in Sources */,
+>>>>>>> photoGallery
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

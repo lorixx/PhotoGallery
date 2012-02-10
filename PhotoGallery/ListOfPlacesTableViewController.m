@@ -9,6 +9,7 @@
 #import "ListOfPlacesTableViewController.h"
 #import "FlickrFetcher.h"
 #import "PhotosOfPlaceTableViewController.h"
+#import "SingletonNetworkSpinner.h"
 
 @implementation ListOfPlacesTableViewController
 
@@ -95,6 +96,11 @@
 
 - (void)viewDidUnload
 {
+    
+    
+    self.topPlaces = nil;
+    self.countryNames = nil;
+    
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -123,7 +129,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
 
 #pragma mark - Table view data source
@@ -149,8 +155,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    // Configure the cell...
-    
+    // Configure the cell...    
     NSDictionary *place = [[self.topPlaces objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     cell.textLabel.text = [place valueForKey:FLICKR_PLACE_NAME];
     
@@ -201,19 +206,32 @@
 }
 */
 
+
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-    PhotosOfPlaceTableViewController *photoOfPlaceTableViewController = [[PhotosOfPlaceTableViewController alloc]initWithPlace: [[self.topPlaces objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
-    [self.navigationController pushViewController:photoOfPlaceTableViewController animated:YES];
+
+    NSDictionary *currentPlace = [[self.topPlaces objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    PhotosOfPlaceTableViewController *photoOfPlaceTableViewController = [[PhotosOfPlaceTableViewController alloc]initWithPlace: currentPlace];
+    
+    //show spinner
+    
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [spinner startAnimating];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
+    
+    dispatch_queue_t  getPhotosToSet = dispatch_queue_create("getPhotosToSet", NULL);
+    dispatch_async(getPhotosToSet, ^{
+        photoOfPlaceTableViewController.photos = [FlickrFetcher photosInPlace:currentPlace maxResults:MAX_PHOTOS_FOR_PLACE];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [spinner stopAnimating];
+            [self.navigationController pushViewController:photoOfPlaceTableViewController animated:YES];
+        });
+    });
+    dispatch_release(getPhotosToSet);
+ 
 }
 
 @end

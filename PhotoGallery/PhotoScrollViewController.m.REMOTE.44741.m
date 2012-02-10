@@ -29,17 +29,6 @@
 @synthesize photoURL = _photoURL;
 
 
-
--(void)setScrollView:(UIScrollView *)scrollView
-{
-    _scrollView = scrollView;
-}
-
--(void)setImageView:(UIImageView *)imageView
-{
-    _imageView = imageView;
-}
-
 -(NSURL *)photoURL
 {
     if (!_photoURL) {

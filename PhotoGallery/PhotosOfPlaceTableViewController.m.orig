@@ -9,7 +9,11 @@
 #import "PhotosOfPlaceTableViewController.h"
 #import "PhotoScrollViewController.h"
 #import "FlickrFetcher.h"
+<<<<<<< HEAD
+#import "PhotoScrollViewController2.h"
+=======
 #import <QuartzCore/QuartzCore.h>
+>>>>>>> photoGallery
 
 
 
@@ -220,10 +224,14 @@
 #pragma mark -
 #pragma mark Data Source Loading / Reloading Methods
 
+<<<<<<< HEAD
+    PhotoScrollViewController2 *photoViewController = [[PhotoScrollViewController2 alloc]initWithPhoto:[self.photos objectAtIndex:indexPath.row]];
+=======
 - (void)reloadTableViewDataSource{
 	
 	//  should be calling your tableviews data source model to reload
 	//  put here just for demo
+>>>>>>> photoGallery
     
     dispatch_queue_t  downloadPhotoInfos = dispatch_queue_create("getPhotosForPlace", NULL);
     dispatch_async(downloadPhotoInfos, ^{

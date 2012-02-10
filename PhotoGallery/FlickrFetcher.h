@@ -14,6 +14,13 @@
 #define FLICKR_PHOTO_OWNER @"ownername"
 #define FLICKR_LATITUDE @"latitude"
 #define FLICKR_LONGITUDE @"longitude"
+#define RECENT_PHOTOS @"recentPhotos"
+#define OWNER_NAME_KEY @"ownername"
+#define PHOTO_TITLE_KEY @"title"
+#define MAX_PHOTOS_FOR_PLACE 8
+#define FLICKR_PLACE_ID @"place_id"
+
+
 
 typedef enum {
 	FlickrPhotoFormatSquare = 1,
