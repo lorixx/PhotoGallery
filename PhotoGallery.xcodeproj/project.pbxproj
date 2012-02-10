@@ -18,6 +18,8 @@
 		DBD3AC3F14E0FFA4008F94C3 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD3AC3614E0FFA4008F94C3 /* whiteArrow.png */; };
 		DBD3AC4014E0FFA4008F94C3 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD3AC3714E0FFA4008F94C3 /* whiteArrow@2x.png */; };
 		DBD3AC4214E23A0B008F94C3 /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD3AC4114E23A0B008F94C3 /* Placeholder.png */; };
+		DBD3AC8114E4E849008F94C3 /* PlaceMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD3AC8014E4E848008F94C3 /* PlaceMapViewController.m */; };
+		DBD3AC8514E4F03D008F94C3 /* PlaceOnMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD3AC8414E4F03D008F94C3 /* PlaceOnMapAnnotation.m */; };
 		DBDC80A714DBA463006B4D73 /* RecentPhotosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDC80A614DBA463006B4D73 /* RecentPhotosTableViewController.m */; };
 		DBE45E7414DE1BCA00D1858B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE45E7314DE1BCA00D1858B /* MapKit.framework */; };
 		DBE45E7714DE1BD300D1858B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE45E7614DE1BD300D1858B /* CoreLocation.framework */; };
@@ -53,6 +55,10 @@
 		DBD3AC3614E0FFA4008F94C3 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
 		DBD3AC3714E0FFA4008F94C3 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
 		DBD3AC4114E23A0B008F94C3 /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
+		DBD3AC7F14E4E848008F94C3 /* PlaceMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceMapViewController.h; sourceTree = "<group>"; };
+		DBD3AC8014E4E848008F94C3 /* PlaceMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceMapViewController.m; sourceTree = "<group>"; };
+		DBD3AC8314E4F03D008F94C3 /* PlaceOnMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaceOnMapAnnotation.h; path = ../PlaceOnMapAnnotation.h; sourceTree = "<group>"; };
+		DBD3AC8414E4F03D008F94C3 /* PlaceOnMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaceOnMapAnnotation.m; path = ../PlaceOnMapAnnotation.m; sourceTree = "<group>"; };
 		DBDC80A514DBA463006B4D73 /* RecentPhotosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentPhotosTableViewController.h; sourceTree = "<group>"; };
 		DBDC80A614DBA463006B4D73 /* RecentPhotosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentPhotosTableViewController.m; sourceTree = "<group>"; };
 		DBE45E7314DE1BCA00D1858B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -198,10 +204,11 @@
 				DBEEBF1914D905E100D992FD /* PhotosOfPlaceTableViewController.m */,
 				DBE45E7814DE3BB900D1858B /* SingletonNetworkSpinner.h */,
 				DBE45E7914DE3BB900D1858B /* SingletonNetworkSpinner.m */,
+				DBD3AC7F14E4E848008F94C3 /* PlaceMapViewController.h */,
+				DBD3AC8014E4E848008F94C3 /* PlaceMapViewController.m */,
+				DBD3AC8314E4F03D008F94C3 /* PlaceOnMapAnnotation.h */,
+				DBD3AC8414E4F03D008F94C3 /* PlaceOnMapAnnotation.m */,
 				DBEEBEEE14D795A900D992FD /* Supporting Files */,
-				DBEEBF2614DA594F00D992FD /* PhotoScrollViewController2.h */,
-				DBEEBF2714DA594F00D992FD /* PhotoScrollViewController2.m */,
-				DBEEBF2814DA595000D992FD /* PhotoScrollViewController2.xib */,
 			);
 			path = PhotoGallery;
 			sourceTree = "<group>";
@@ -304,6 +311,8 @@
 				DBDC80A714DBA463006B4D73 /* RecentPhotosTableViewController.m in Sources */,
 				DBE45E7A14DE3BB900D1858B /* SingletonNetworkSpinner.m in Sources */,
 				DBD3AC3814E0FFA4008F94C3 /* EGORefreshTableHeaderView.m in Sources */,
+				DBD3AC8114E4E849008F94C3 /* PlaceMapViewController.m in Sources */,
+				DBD3AC8514E4F03D008F94C3 /* PlaceOnMapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

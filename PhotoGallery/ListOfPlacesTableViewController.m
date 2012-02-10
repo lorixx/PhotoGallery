@@ -10,6 +10,8 @@
 #import "FlickrFetcher.h"
 #import "PhotosOfPlaceTableViewController.h"
 #import "SingletonNetworkSpinner.h"
+#import "PlaceMapViewController.h"
+#import "PlaceOnMapAnnotation.h"
 
 @implementation ListOfPlacesTableViewController
 
@@ -158,9 +160,44 @@
     // Configure the cell...    
     NSDictionary *place = [[self.topPlaces objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     cell.textLabel.text = [place valueForKey:FLICKR_PLACE_NAME];
+    cell.accessoryType=UITableViewCellAccessoryDetailDisclosureButton;
+    
+    
+    
     
     return cell;
 }
+
+
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    
+    NSDictionary *placeSelected = [[self.topPlaces objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]; 
+    
+    PlaceMapViewController *placeMap = [self.storyboard instantiateViewControllerWithIdentifier:@"PlaceMapViewController"];
+    
+//    NSMutableArray *thisAnnotations = [NSMutableArray arrayWithCapacity:[self.topPlaces count]];
+//
+////    for (id currentPlace in self.topPlaces) {
+////        [annotations addObject:[PlaceOnMapAnnotation annotationForPlace:currentPlace]];
+////    }
+//    [thisAnnotations addObject:placeSelected];
+    
+    //placeMap.annotations = thisAnnotations ;
+    placeMap.annotations = [NSArray arrayWithObjects:placeSelected, nil];
+    
+//    CLLocationCoordinate2D coordinate;
+//    coordinate.latitude = [[placeSelected objectForKey:FLICKR_LATITUDE] doubleValue];
+//    coordinate.longitude = [[placeSelected objectForKey:FLICKR_LONGITUDE] doubleValue];
+//    
+//    //set center to be placeSelected:
+//    [placeMap.mapView setCenterCoordinate: coordinate animated:YES];
+    [self.navigationController pushViewController:placeMap animated:YES];  
+}
+
+
+
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section 
 {

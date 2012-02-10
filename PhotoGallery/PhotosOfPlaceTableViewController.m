@@ -150,6 +150,7 @@
         title = @"Untitled";
     }
     
+    cell.accessoryType=UITableViewCellAccessoryDetailDisclosureButton;
     cell.textLabel.text = title;
     cell.detailTextLabel.text = [photo objectForKey:OWNER_NAME_KEY];
     cell.imageView.frame = CGRectMake(15, 6, 58, 58);
@@ -176,6 +177,12 @@
     
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"haha");
+}
+
 
 /*
 // Override to support conditional editing of the table view.
