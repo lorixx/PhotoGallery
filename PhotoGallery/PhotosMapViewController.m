@@ -9,6 +9,7 @@
 #import "PhotosMapViewController.h"
 #import "PhotoScrollViewController.h"
 #import "PhotoOnMapAnnotation.h"
+#import "FlickrFetcher.h"
 
 @interface PhotosMapViewController() <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -26,10 +27,61 @@
 
 #pragma mark - Synchronize Model and View
 
+-(void) setRegion
+{
+    if ([self.photos count] > 0) {
+        @try {
+            NSDictionary *firstPhoto = [self.photos objectAtIndex:0];
+            double max_long = [[firstPhoto objectForKey:FLICKR_LONGITUDE]doubleValue];
+            double min_long = [[firstPhoto objectForKey:FLICKR_LONGITUDE]doubleValue];
+            double max_lat =[[firstPhoto objectForKey:FLICKR_LATITUDE]doubleValue];
+            double min_lat = [[firstPhoto objectForKey:FLICKR_LATITUDE]doubleValue];
+            
+            for (NSDictionary *currentPhoto in self.photos) {
+                if ([[currentPhoto objectForKey:FLICKR_LATITUDE]doubleValue] > max_lat) {
+                    max_lat = [[currentPhoto objectForKey:FLICKR_LATITUDE]doubleValue];
+                } 
+                
+                if ([[currentPhoto objectForKey:FLICKR_LATITUDE]doubleValue] < min_lat) {
+                    min_lat = [[currentPhoto objectForKey:FLICKR_LATITUDE]doubleValue];
+                } 
+                if ([[currentPhoto objectForKey:FLICKR_LONGITUDE]doubleValue] > max_long) {
+                    max_long = [[currentPhoto objectForKey:FLICKR_LONGITUDE]doubleValue];
+                } 
+                
+                if ([[currentPhoto objectForKey:FLICKR_LONGITUDE]doubleValue] < min_long) {
+                    min_long = [[currentPhoto objectForKey:FLICKR_LONGITUDE]doubleValue];
+                }                 
+            }
+            
+            
+            double center_long = (max_long + min_long)/2;
+            double center_lat = (max_lat + min_lat)/2;
+            
+            double deltaLat = abs(max_lat - min_lat);
+            double deltaLong = abs(max_long - min_long);
+            
+            if (deltaLat < 2) {deltaLat = 2;}
+            if (deltaLong < 2) {deltaLong = 2;}
+            
+            CLLocationCoordinate2D coord = {latitude: center_lat, longitude: center_long};
+            MKCoordinateSpan span = MKCoordinateSpanMake(deltaLat, deltaLong);
+            MKCoordinateRegion region = {coord, span};
+            [self.mapView setRegion:region];
+            
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Error calculating new map region: %@", exception);
+
+        }
+    }
+}
+
 - (void)updateMapView
 {
     if (self.mapView.annotations) [self.mapView removeAnnotations:self.mapView.annotations];
-    if (self.annotations) [self.mapView addAnnotations:self.annotations];    
+    [self setRegion];
+    if (self.annotations) [self.mapView addAnnotations:self.annotations];  
 }
 
 - (void)setMapView:(MKMapView *)mapView
@@ -43,6 +95,7 @@
     _annotations = annotations;
     [self updateMapView];
 }
+
 
 #pragma mark - MKMapViewDelegate
 
