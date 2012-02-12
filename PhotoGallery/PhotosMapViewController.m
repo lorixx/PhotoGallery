@@ -7,10 +7,11 @@
 //
 
 #import "PhotosMapViewController.h"
+#import "PhotoScrollViewController.h"
+#import "PhotoOnMapAnnotation.h"
 
 @interface PhotosMapViewController() <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-
 @end
 
 
@@ -71,7 +72,12 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     // To do: hook up photo view tableView Controller here
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"iPhone_MainStoryboard" bundle:nil];
+    PhotoScrollViewController *photoViewController = [storyboard instantiateViewControllerWithIdentifier:@"PhotoScrollViewController"];
     
+    PhotoOnMapAnnotation *photoAnnotation = view.annotation;
+    photoViewController.photo = photoAnnotation.photo;
+    [self.navigationController pushViewController:photoViewController animated:YES];
 }
 
 #pragma mark - View lifecycle

@@ -329,6 +329,7 @@
     }
     
     photosMap.annotations = allAnnotation;
+    photosMap.photos = self.photos;
     
     [self.navigationController pushViewController:photosMap animated:YES];  
     
