@@ -7,20 +7,35 @@
 //
 
 #import "PlaceMapViewController.h"
+#import "MKMapView+ZoomLevel.h"
 
 
 @interface PlaceMapViewController() <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
 @end
 
 
 @implementation PlaceMapViewController
 
+#define ZOOM_LEVEL 9
 
 @synthesize mapView = _mapView;
-
 @synthesize annotations = _annotations;
 @synthesize delegate = _delegate;
+
+
+#pragma mark - Set mapView center
+-(void) setMapViewCenter: (CLLocationCoordinate2D)center
+{
+    //[self.mapView setCenterCoordinate: center animated:YES];
+    
+    [self.mapView setCenterCoordinate:center zoomLevel:ZOOM_LEVEL animated:YES];
+}
+
+
+
+
 
 #pragma mark - Synchronize Model and View
 
@@ -55,11 +70,6 @@
     }
     
     aView.annotation = annotation;
-    
-    
-    
-    
-    
     return aView;
 }
 

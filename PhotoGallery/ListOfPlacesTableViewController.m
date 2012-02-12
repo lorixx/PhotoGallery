@@ -175,7 +175,10 @@
     
     NSDictionary *placeSelected = [[self.topPlaces objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]; 
     
-    PlaceMapViewController *placeMap = [self.storyboard instantiateViewControllerWithIdentifier:@"PlaceMapViewController"];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"iPhone_MainStoryboard" bundle:nil];
+    PlaceMapViewController *placeMap = [storyboard instantiateViewControllerWithIdentifier:@"PlaceMapViewController"];
+    placeMap.annotations = [NSArray arrayWithObjects:  [PlaceOnMapAnnotation annotationForPlace:placeSelected], nil];
+
     
 //    NSMutableArray *thisAnnotations = [NSMutableArray arrayWithCapacity:[self.topPlaces count]];
 //
@@ -185,15 +188,15 @@
 //    [thisAnnotations addObject:placeSelected];
     
     //placeMap.annotations = thisAnnotations ;
-    placeMap.annotations = [NSArray arrayWithObjects:placeSelected, nil];
     
-//    CLLocationCoordinate2D coordinate;
-//    coordinate.latitude = [[placeSelected objectForKey:FLICKR_LATITUDE] doubleValue];
-//    coordinate.longitude = [[placeSelected objectForKey:FLICKR_LONGITUDE] doubleValue];
+    CLLocationCoordinate2D coordinate;
+    coordinate.latitude = [[placeSelected objectForKey:FLICKR_LATITUDE] doubleValue];
+    coordinate.longitude = [[placeSelected objectForKey:FLICKR_LONGITUDE] doubleValue];
 //    
-//    //set center to be placeSelected:
-//    [placeMap.mapView setCenterCoordinate: coordinate animated:YES];
+    //set center to be placeSelected:
     [self.navigationController pushViewController:placeMap animated:YES];  
+    [placeMap setMapViewCenter: coordinate];
+
 }
 
 

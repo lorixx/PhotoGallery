@@ -20,5 +20,6 @@
 @property (nonatomic, strong) NSArray *annotations; // of id <MKAnnotation>
 @property (nonatomic, weak) id <PlaceMapViewControllerDelegate> delegate;
 
+-(void) setMapViewCenter: (CLLocationCoordinate2D)center;
 
 @end
