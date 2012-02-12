@@ -43,6 +43,7 @@
     coordinate.latitude = [[place objectForKey:FLICKR_LATITUDE] doubleValue];
     coordinate.longitude = [[place objectForKey:FLICKR_LONGITUDE] doubleValue];
     [self setMapViewCenter: coordinate];
+    //[self.mapView selectAnnotation:[self.annotations lastObject] animated:YES];
    
 }
 
@@ -52,6 +53,8 @@
 {
     if (self.mapView.annotations) [self.mapView removeAnnotations:self.mapView.annotations];
     if (self.annotations) [self.mapView addAnnotations:self.annotations];
+    [self.mapView selectAnnotation:[self.annotations lastObject] animated:YES];
+
 }
 
 - (void)setMapView:(MKMapView *)mapView

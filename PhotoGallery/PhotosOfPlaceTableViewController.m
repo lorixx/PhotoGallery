@@ -10,6 +10,8 @@
 #import "PhotoScrollViewController.h"
 #import "FlickrFetcher.h"
 #import <QuartzCore/QuartzCore.h>
+#import "PhotosMapViewController.h"
+#import "PhotoOnMapAnnotation.h"
 
 
 
@@ -56,6 +58,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    UIBarButtonItem *mapViewBtn = [[UIBarButtonItem alloc] initWithTitle:@"Map View"  style:UIBarButtonItemStylePlain target:self action:@selector(buttonMapViewClicked)];
+    
+    self.navigationItem.rightBarButtonItem = mapViewBtn;
+    
     
     if (_refreshHeaderView == nil) {
 		
@@ -302,5 +310,29 @@
     photoViewController.photo = [self.photos objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:photoViewController animated:YES];
 }
+
+
+
+#pragma mark - onClick right bar button item
+
+-(IBAction)buttonMapViewClicked
+{
+    //set up map view controller and initialize here    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"iPhone_MainStoryboard" bundle:nil];
+    
+    PhotosMapViewController *photosMap = [storyboard instantiateViewControllerWithIdentifier:@"PhotosMapViewController"];
+    
+    NSMutableArray *allAnnotation = [NSMutableArray arrayWithCapacity:[self.photos count]];
+    
+    for (id photo in self.photos){
+        [allAnnotation addObject: [PhotoOnMapAnnotation annotationForPhoto:photo]];
+    }
+    
+    photosMap.annotations = allAnnotation;
+    
+    [self.navigationController pushViewController:photosMap animated:YES];  
+    
+}
+
 
 @end

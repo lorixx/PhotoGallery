@@ -229,11 +229,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PhotoGallery/PlaceMapViewController.m"
-         timestampString = "350762614.954282"
+         timestampString = "350763642.477867"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "54"
-         endingLineNumber = "54"
+         startingLineNumber = "55"
+         endingLineNumber = "55"
          landmarkName = "-updateMapView"
          landmarkType = "5">
       </FileBreakpoint>
@@ -243,25 +243,25 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PhotoGallery/PlaceMapViewController.m"
-         timestampString = "350762614.954282"
+         timestampString = "350763642.477867"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "59"
-         endingLineNumber = "59"
+         startingLineNumber = "62"
+         endingLineNumber = "62"
          landmarkName = "-setMapView:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PhotoGallery/PlaceMapViewController.m"
-         timestampString = "350762614.954282"
+         timestampString = "350763642.477867"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "65"
-         endingLineNumber = "65"
+         startingLineNumber = "68"
+         endingLineNumber = "68"
          landmarkName = "-setAnnotations:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -271,11 +271,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PhotoGallery/PlaceMapViewController.m"
-         timestampString = "350762614.954282"
+         timestampString = "350763377.847438"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "53"
-         endingLineNumber = "53"
+         startingLineNumber = "54"
+         endingLineNumber = "54"
          landmarkName = "-updateMapView"
          landmarkType = "5">
       </FileBreakpoint>

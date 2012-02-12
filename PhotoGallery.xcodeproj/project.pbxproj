@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DB24F8E614E8309D0017150F /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB24F8E514E8309D0017150F /* MKMapView+ZoomLevel.m */; };
+		DB24F8EA14E83FFD0017150F /* PhotoOnMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB24F8E914E83FFD0017150F /* PhotoOnMapAnnotation.m */; };
+		DB24F8ED14E8517F0017150F /* PhotosMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB24F8EC14E8517F0017150F /* PhotosMapViewController.m */; };
 		DBD3AC2414E0EC83008F94C3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD3AC2314E0EC83008F94C3 /* QuartzCore.framework */; };
 		DBD3AC3814E0FFA4008F94C3 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD3AC2E14E0FFA4008F94C3 /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DBD3AC3914E0FFA4008F94C3 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD3AC3014E0FFA4008F94C3 /* blackArrow.png */; };
@@ -46,6 +48,10 @@
 /* Begin PBXFileReference section */
 		DB24F8E414E8309D0017150F /* MKMapView+ZoomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+ZoomLevel.h"; sourceTree = "<group>"; };
 		DB24F8E514E8309D0017150F /* MKMapView+ZoomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+ZoomLevel.m"; sourceTree = "<group>"; };
+		DB24F8E814E83FFD0017150F /* PhotoOnMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoOnMapAnnotation.h; sourceTree = "<group>"; };
+		DB24F8E914E83FFD0017150F /* PhotoOnMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoOnMapAnnotation.m; sourceTree = "<group>"; };
+		DB24F8EB14E8517F0017150F /* PhotosMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosMapViewController.h; sourceTree = "<group>"; };
+		DB24F8EC14E8517F0017150F /* PhotosMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosMapViewController.m; sourceTree = "<group>"; };
 		DBD3AC2314E0EC83008F94C3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DBD3AC2D14E0FFA4008F94C3 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 		DBD3AC2E14E0FFA4008F94C3 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
@@ -213,6 +219,10 @@
 				DBD3AC8414E4F03D008F94C3 /* PlaceOnMapAnnotation.m */,
 				DB24F8E414E8309D0017150F /* MKMapView+ZoomLevel.h */,
 				DB24F8E514E8309D0017150F /* MKMapView+ZoomLevel.m */,
+				DB24F8E814E83FFD0017150F /* PhotoOnMapAnnotation.h */,
+				DB24F8E914E83FFD0017150F /* PhotoOnMapAnnotation.m */,
+				DB24F8EB14E8517F0017150F /* PhotosMapViewController.h */,
+				DB24F8EC14E8517F0017150F /* PhotosMapViewController.m */,
 				DBEEBEEE14D795A900D992FD /* Supporting Files */,
 			);
 			path = PhotoGallery;
@@ -319,6 +329,8 @@
 				DBD3AC8114E4E849008F94C3 /* PlaceMapViewController.m in Sources */,
 				DBD3AC8514E4F03D008F94C3 /* PlaceOnMapAnnotation.m in Sources */,
 				DB24F8E614E8309D0017150F /* MKMapView+ZoomLevel.m in Sources */,
+				DB24F8EA14E83FFD0017150F /* PhotoOnMapAnnotation.m in Sources */,
+				DB24F8ED14E8517F0017150F /* PhotosMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
