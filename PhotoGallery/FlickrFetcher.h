@@ -17,7 +17,7 @@
 #define RECENT_PHOTOS @"recentPhotos"
 #define OWNER_NAME_KEY @"ownername"
 #define PHOTO_TITLE_KEY @"title"
-#define MAX_PHOTOS_FOR_PLACE 8
+#define MAX_PHOTOS_FOR_PLACE 50
 #define FLICKR_PLACE_ID @"place_id"
 
 

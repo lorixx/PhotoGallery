@@ -19,7 +19,7 @@
 @interface PlaceMapViewController : UIViewController
 @property (nonatomic, strong) NSArray *annotations; // of id <MKAnnotation>
 @property (nonatomic, weak) id <PlaceMapViewControllerDelegate> delegate;
+@property (nonatomic, weak) NSDictionary *place;
 
--(void) setMapViewCenter: (CLLocationCoordinate2D)center;
 
 @end

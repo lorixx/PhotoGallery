@@ -179,23 +179,17 @@
     PlaceMapViewController *placeMap = [storyboard instantiateViewControllerWithIdentifier:@"PlaceMapViewController"];
     placeMap.annotations = [NSArray arrayWithObjects:  [PlaceOnMapAnnotation annotationForPlace:placeSelected], nil];
 
-    
 //    NSMutableArray *thisAnnotations = [NSMutableArray arrayWithCapacity:[self.topPlaces count]];
 //
 ////    for (id currentPlace in self.topPlaces) {
 ////        [annotations addObject:[PlaceOnMapAnnotation annotationForPlace:currentPlace]];
 ////    }
 //    [thisAnnotations addObject:placeSelected];
-    
     //placeMap.annotations = thisAnnotations ;
-    
-    CLLocationCoordinate2D coordinate;
-    coordinate.latitude = [[placeSelected objectForKey:FLICKR_LATITUDE] doubleValue];
-    coordinate.longitude = [[placeSelected objectForKey:FLICKR_LONGITUDE] doubleValue];
-//    
-    //set center to be placeSelected:
+
     [self.navigationController pushViewController:placeMap animated:YES];  
-    [placeMap setMapViewCenter: coordinate];
+    placeMap.place = placeSelected;
+
 
 }
 

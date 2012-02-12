@@ -8,6 +8,8 @@
 
 #import "PlaceMapViewController.h"
 #import "MKMapView+ZoomLevel.h"
+#import "FlickrFetcher.h"
+#import "PhotosOfPlaceTableViewController.h"
 
 
 @interface PlaceMapViewController() <MKMapViewDelegate>
@@ -23,19 +25,26 @@
 @synthesize mapView = _mapView;
 @synthesize annotations = _annotations;
 @synthesize delegate = _delegate;
+@synthesize place = _place;
 
 
 #pragma mark - Set mapView center
+
 -(void) setMapViewCenter: (CLLocationCoordinate2D)center
 {
-    //[self.mapView setCenterCoordinate: center animated:YES];
-    
     [self.mapView setCenterCoordinate:center zoomLevel:ZOOM_LEVEL animated:YES];
 }
 
-
-
-
+-(void)setPlace:(NSDictionary *)place
+{
+    _place = place;
+    
+    CLLocationCoordinate2D coordinate;
+    coordinate.latitude = [[place objectForKey:FLICKR_LATITUDE] doubleValue];
+    coordinate.longitude = [[place objectForKey:FLICKR_LONGITUDE] doubleValue];
+    [self setMapViewCenter: coordinate];
+   
+}
 
 #pragma mark - Synchronize Model and View
 
@@ -82,7 +91,24 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     // To do: hook up another tableView Controller here
+    PhotosOfPlaceTableViewController *photoOfPlaceTableViewController = [[PhotosOfPlaceTableViewController alloc]initWithPlace: self.place];
+    
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [spinner startAnimating];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
+    
+    dispatch_queue_t  getPhotosToSet = dispatch_queue_create("getPhotosToSet", NULL);
+    dispatch_async(getPhotosToSet, ^{
+        photoOfPlaceTableViewController.photos = [FlickrFetcher photosInPlace:self.place maxResults:MAX_PHOTOS_FOR_PLACE];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [spinner stopAnimating]; //stop animating of spinner
+            [self.navigationController pushViewController:photoOfPlaceTableViewController animated:YES];
+        });
+    });
+    dispatch_release(getPhotosToSet);
+  
 }
+
 #pragma mark - View lifecycle
 
 /*
