@@ -58,11 +58,11 @@
             double center_long = (max_long + min_long)/2;
             double center_lat = (max_lat + min_lat)/2;
             
-            double deltaLat = abs(max_lat - min_lat);
-            double deltaLong = abs(max_long - min_long);
+            double deltaLat = fabs(max_lat - min_lat) ;
+            double deltaLong = fabs(max_long - min_long) ;
             
-            if (deltaLat < 2) {deltaLat = 2;}
-            if (deltaLong < 2) {deltaLong = 2;}
+            //if (deltaLat < 2) {deltaLat = 2;}
+            //if (deltaLong < 2) {deltaLong = 2;}
             
             CLLocationCoordinate2D coord = {latitude: center_lat, longitude: center_long};
             MKCoordinateSpan span = MKCoordinateSpanMake(deltaLat, deltaLong);
@@ -116,15 +116,13 @@
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)aView
 {
     /* Set up Image getting from server */
-    UIImage *image = [self.delegate photoMapViewController:self iamgeForAnnotation:aView.annotation];  //maybe there is lag issue
-        
-    
+    UIImage *image = [self.delegate photoMapViewController:self iamgeForAnnotation:aView.annotation];          
     [(UIImageView *)aView.leftCalloutAccessoryView setImage:image];
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    // To do: hook up photo view tableView Controller here
+    //hook up photo view tableView Controller here
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"iPhone_MainStoryboard" bundle:nil];
     PhotoScrollViewController *photoViewController = [storyboard instantiateViewControllerWithIdentifier:@"PhotoScrollViewController"];
     

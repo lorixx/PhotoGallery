@@ -15,7 +15,7 @@
 
 
 
-@interface PhotosOfPlaceTableViewController()
+@interface PhotosOfPlaceTableViewController()<PhotosMapViewControllerDelegate>
 @end
 
 
@@ -50,6 +50,17 @@
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
+}
+
+
+#pragma mark - PhotosMapViewControllerDelegate
+- (UIImage *)photoMapViewController:(PhotosMapViewController *)sender iamgeForAnnotation:(id <MKAnnotation>)annotation
+{
+    PhotoOnMapAnnotation *photoAnnotation = annotation;
+    NSDictionary *photo = photoAnnotation.photo;
+    NSURL *url = [FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatSquare];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    return data ? [UIImage imageWithData:data] : nil;
 }
 
 
@@ -158,7 +169,7 @@
         title = @"Untitled";
     }
     
-    cell.accessoryType=UITableViewCellAccessoryDetailDisclosureButton;
+    //cell.accessoryType=UITableViewCellAccessoryDetailDisclosureButton;
     cell.textLabel.text = title;
     cell.detailTextLabel.text = [photo objectForKey:OWNER_NAME_KEY];
     cell.imageView.frame = CGRectMake(15, 6, 58, 58);
@@ -186,10 +197,10 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"haha");
-}
+//- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+//{
+//    NSLog(@"haha");
+//}
 
 
 /*
@@ -330,6 +341,7 @@
     
     photosMap.annotations = allAnnotation;
     photosMap.photos = self.photos;
+    photosMap.delegate = self;
     
     [self.navigationController pushViewController:photosMap animated:YES];  
     
