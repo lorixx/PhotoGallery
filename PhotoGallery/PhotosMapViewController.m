@@ -64,7 +64,10 @@
             //if (deltaLat < 2) {deltaLat = 2;}
             //if (deltaLong < 2) {deltaLong = 2;}
             
-            CLLocationCoordinate2D coord = {latitude: center_lat, longitude: center_long};
+            CLLocationCoordinate2D coord;
+            coord.latitude = center_lat;
+            coord.longitude = center_long;
+            
             MKCoordinateSpan span = MKCoordinateSpanMake(deltaLat, deltaLong);
             MKCoordinateRegion region = {coord, span};
             [self.mapView setRegion:region];

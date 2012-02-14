@@ -82,6 +82,7 @@
 
 #pragma mark - View lifecycle
 
+#define TEN_MEGABYTES 10*1024*1024
 -(void)viewWillAppear:(BOOL)animated
 {
  
@@ -94,7 +95,36 @@
     
     dispatch_queue_t downloadQueue = dispatch_queue_create("Image downloader", NULL);
     dispatch_async(downloadQueue, ^{
-        NSData *photoData = [NSData dataWithContentsOfURL:self.photoURL];
+        /* Check if file exist, then dont need to get file from remote, otherwise get file from remote then save it to cache */
+        NSString *photoId = [self.photo objectForKey:FLICKR_PHOTO_ID];
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        
+        NSArray *array = [fileManager URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask];
+        NSURL *cacheDirectory = [array objectAtIndex:0]; 
+        NSMutableString *filePath = [[NSMutableString alloc]initWithString:[cacheDirectory path]];
+        [filePath appendString:@"/"];
+        [filePath appendString:photoId];
+        [filePath appendString:@".jpg"];
+        NSData *photoData;
+        if([fileManager fileExistsAtPath:filePath]){
+            photoData = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:filePath]];
+            
+        } else{
+            photoData = [NSData dataWithContentsOfURL:self.photoURL];
+            //save to cache, if over limit, delete the oldest created one
+            NSInteger newPhotoSize = [photoData length];
+            NSInteger currentSize =  [self calculateSizeForAllFiles:[fileManager contentsOfDirectoryAtPath:[cacheDirectory path] error:nil] onDirectoryPath:[cacheDirectory path]];
+            NSArray *allFiles = [fileManager contentsOfDirectoryAtPath:[cacheDirectory path] error:nil];
+            
+            while (currentSize + newPhotoSize > TEN_MEGABYTES) {  /* Make sure the cache uses no more than 10 MB*/
+                NSString *firstFilePath = [allFiles objectAtIndex:0];
+                [fileManager removeItemAtPath:firstFilePath error:nil];
+                currentSize = [self calculateSizeForAllFiles:[fileManager contentsOfDirectoryAtPath:[cacheDirectory path] error:nil] onDirectoryPath:[cacheDirectory path]];;
+            }
+            
+            //add file to cache
+            [photoData writeToFile:filePath atomically:YES];
+        }  
         dispatch_async(dispatch_get_main_queue(), ^{
             
             if (!photoData) {
@@ -107,9 +137,6 @@
                 aLabel.textAlignment = UITextAlignmentCenter;
                 [aLabel autoresizesSubviews];
             } else{
-                
-                // ???:Need to implement cache here
-
                 self.imageView.image = [UIImage imageWithData:photoData];
                 self.scrollView.contentSize = self.imageView.image.size;
                 self.imageView.frame = CGRectMake(0,0, self.imageView.image.size.width, self.imageView.image.size.height);
@@ -153,6 +180,29 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
+
+
+
+
+#pragma mark - Sort files in directory based on modified date
+
+-(NSInteger) calculateSizeForAllFiles:(NSArray *)files onDirectoryPath: (NSString *)directoryPath
+{
+    NSInteger totalSize = 0;
+    NSMutableString *fullFilePath;
+
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    for ( NSString *filePath in files) {
+        [fullFilePath appendString:directoryPath];
+        [fullFilePath appendString:@"/"];
+        [fullFilePath appendString:filePath];
+        totalSize +=[[fileManager contentsAtPath:fullFilePath]length];
+        [fullFilePath setString: @""];
+    }
+        return totalSize;  
+}
+
+
 
 
 @end

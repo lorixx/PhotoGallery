@@ -13,4 +13,5 @@
 
 @property (strong, nonatomic) NSDictionary *photo;
 
+-(NSInteger) calculateSizeForAllFiles:(NSArray *)files onDirectoryPath: (NSString *)directoryPath;
 @end
