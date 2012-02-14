@@ -10,6 +10,7 @@
 		DB24F8E614E8309D0017150F /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB24F8E514E8309D0017150F /* MKMapView+ZoomLevel.m */; };
 		DB24F8EA14E83FFD0017150F /* PhotoOnMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB24F8E914E83FFD0017150F /* PhotoOnMapAnnotation.m */; };
 		DB24F8ED14E8517F0017150F /* PhotosMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB24F8EC14E8517F0017150F /* PhotosMapViewController.m */; };
+		DB24F8EF14EA30AC0017150F /* iPad_MainStoryboard.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB24F8EE14EA30AB0017150F /* iPad_MainStoryboard.Storyboard */; };
 		DBD3AC2414E0EC83008F94C3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD3AC2314E0EC83008F94C3 /* QuartzCore.framework */; };
 		DBD3AC3814E0FFA4008F94C3 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD3AC2E14E0FFA4008F94C3 /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DBD3AC3914E0FFA4008F94C3 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD3AC3014E0FFA4008F94C3 /* blackArrow.png */; };
@@ -52,6 +53,7 @@
 		DB24F8E914E83FFD0017150F /* PhotoOnMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoOnMapAnnotation.m; sourceTree = "<group>"; };
 		DB24F8EB14E8517F0017150F /* PhotosMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosMapViewController.h; sourceTree = "<group>"; };
 		DB24F8EC14E8517F0017150F /* PhotosMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosMapViewController.m; sourceTree = "<group>"; };
+		DB24F8EE14EA30AB0017150F /* iPad_MainStoryboard.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad_MainStoryboard.Storyboard; sourceTree = "<group>"; };
 		DBD3AC2314E0EC83008F94C3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DBD3AC2D14E0FFA4008F94C3 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 		DBD3AC2E14E0FFA4008F94C3 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				DBEEBF3A14DA775800D992FD /* PhotoScrollViewController.m */,
 				DBEEBEF614D795A900D992FD /* AppDelegate.h */,
 				DBEEBEF714D795A900D992FD /* AppDelegate.m */,
+				DB24F8EE14EA30AB0017150F /* iPad_MainStoryboard.Storyboard */,
 				DBEEBEF914D795A900D992FD /* iPhone_MainStoryboard.storyboard */,
 				DBEEBEFF14D795A900D992FD /* first.png */,
 				DBEEBF0114D795A900D992FD /* first@2x.png */,
@@ -307,6 +310,7 @@
 				DBD3AC3F14E0FFA4008F94C3 /* whiteArrow.png in Resources */,
 				DBD3AC4014E0FFA4008F94C3 /* whiteArrow@2x.png in Resources */,
 				DBD3AC4214E23A0B008F94C3 /* Placeholder.png in Resources */,
+				DB24F8EF14EA30AC0017150F /* iPad_MainStoryboard.Storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
