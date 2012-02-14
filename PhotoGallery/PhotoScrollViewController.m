@@ -117,8 +117,12 @@
             NSArray *allFiles = [fileManager contentsOfDirectoryAtPath:[cacheDirectory path] error:nil];
             
             while (currentSize + newPhotoSize > TEN_MEGABYTES) {  /* Make sure the cache uses no more than 10 MB*/
+                allFiles = [fileManager contentsOfDirectoryAtPath:[cacheDirectory path] error:nil]; //refresh the whole array
                 NSString *firstFilePath = [allFiles objectAtIndex:0];
-                [fileManager removeItemAtPath:firstFilePath error:nil];
+                NSMutableString *firstFileFullPath = [[NSMutableString alloc]initWithString:[cacheDirectory path]];
+                [firstFileFullPath appendString:@"/"];
+                [firstFileFullPath appendString:firstFilePath];
+                [fileManager removeItemAtPath:firstFileFullPath error:nil];
                 currentSize = [self calculateSizeForAllFiles:[fileManager contentsOfDirectoryAtPath:[cacheDirectory path] error:nil] onDirectoryPath:[cacheDirectory path]];;
             }
             
@@ -189,7 +193,7 @@
 -(NSInteger) calculateSizeForAllFiles:(NSArray *)files onDirectoryPath: (NSString *)directoryPath
 {
     NSInteger totalSize = 0;
-    NSMutableString *fullFilePath;
+    NSMutableString *fullFilePath = [[NSMutableString alloc]initWithString:@""];
 
     NSFileManager *fileManager = [NSFileManager defaultManager];
     for ( NSString *filePath in files) {

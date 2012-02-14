@@ -79,11 +79,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PhotoGallery/PhotoScrollViewController.m"
-         timestampString = "350889834.755824"
+         timestampString = "350890824.456744"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "240"
-         endingLineNumber = "240">
+         startingLineNumber = "244"
+         endingLineNumber = "244">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
@@ -91,11 +91,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PhotoGallery/PhotoScrollViewController.m"
-         timestampString = "350889834.755824"
+         timestampString = "350890824.456744"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "239"
-         endingLineNumber = "239">
+         startingLineNumber = "243"
+         endingLineNumber = "243">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
