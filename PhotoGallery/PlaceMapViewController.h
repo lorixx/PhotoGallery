@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "SplitViewBarButtonItemPresenter.h"
 
 
 @class PlaceMapViewController;
@@ -16,7 +17,7 @@
 - (UIImage *)placeMapViewController:(PlaceMapViewController *)sender iamgeForAnnotation:(id <MKAnnotation>)annotation;
 @end
 
-@interface PlaceMapViewController : UIViewController
+@interface PlaceMapViewController : UIViewController <SplitViewBarButtonItemPresenter>
 @property (nonatomic, strong) NSArray *annotations; // of id <MKAnnotation>
 @property (nonatomic, weak) id <PlaceMapViewControllerDelegate> delegate;
 @property (nonatomic, weak) NSDictionary *place;

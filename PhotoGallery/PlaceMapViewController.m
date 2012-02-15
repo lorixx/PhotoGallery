@@ -27,6 +27,23 @@
 @synthesize annotations = _annotations;
 @synthesize delegate = _delegate;
 @synthesize place = _place;
+@synthesize splitViewBarButtonItem = _splitViewBarButtonItem;
+
+
+
+/* Here is how we set up toobar item for split view in potrait mode */
+-(void) setSplitViewBarButtonItem:(UIBarButtonItem *)splitViewBarButtonItem
+{
+    if (_splitViewBarButtonItem != splitViewBarButtonItem) {
+        NSMutableArray *toolbarItems = [self.navigationItem.rightBarButtonItems mutableCopy];
+        if(_splitViewBarButtonItem) [toolbarItems removeObject:_splitViewBarButtonItem];
+        if (splitViewBarButtonItem) {
+            [toolbarItems insertObject:splitViewBarButtonItem atIndex:0];
+            self.navigationItem.rightBarButtonItems = toolbarItems;
+            _splitViewBarButtonItem = splitViewBarButtonItem;
+        }
+    }
+}
 
 
 #pragma mark - Set mapView center

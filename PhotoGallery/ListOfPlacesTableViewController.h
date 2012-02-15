@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ListOfPlacesTableViewController : UITableViewController
+@interface ListOfPlacesTableViewController : UITableViewController<UISplitViewControllerDelegate>
 
 @property (nonatomic, strong)NSArray *topPlaces;
 @property (nonatomic, strong)NSArray *simpleDataStructureAllPlaces;

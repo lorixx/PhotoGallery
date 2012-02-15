@@ -54,6 +54,7 @@
 		DB24F8EB14E8517F0017150F /* PhotosMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosMapViewController.h; sourceTree = "<group>"; };
 		DB24F8EC14E8517F0017150F /* PhotosMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosMapViewController.m; sourceTree = "<group>"; };
 		DB24F8EE14EA30AB0017150F /* iPad_MainStoryboard.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad_MainStoryboard.Storyboard; sourceTree = "<group>"; };
+		DBD1F3CC14EB8C6A001FC9C7 /* SplitViewBarButtonItemPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitViewBarButtonItemPresenter.h; sourceTree = "<group>"; };
 		DBD3AC2314E0EC83008F94C3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DBD3AC2D14E0FFA4008F94C3 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 		DBD3AC2E14E0FFA4008F94C3 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
@@ -226,6 +227,7 @@
 				DB24F8E914E83FFD0017150F /* PhotoOnMapAnnotation.m */,
 				DB24F8EB14E8517F0017150F /* PhotosMapViewController.h */,
 				DB24F8EC14E8517F0017150F /* PhotosMapViewController.m */,
+				DBD1F3CC14EB8C6A001FC9C7 /* SplitViewBarButtonItemPresenter.h */,
 				DBEEBEEE14D795A900D992FD /* Supporting Files */,
 			);
 			path = PhotoGallery;
