@@ -10,13 +10,18 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNc-A6-dSG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="pe5-gw-9Z4" customClass="PlaceMapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CmG-hB-u6I">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="AP2-Rw-gjM">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="vLh-sN-c4e">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items/>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -24,10 +29,11 @@
                     <navigationItem key="navigationItem" id="r6I-Jk-ew4"/>
                     <connections>
                         <outlet property="mapView" destination="AP2-Rw-gjM" id="Cty-fG-FtB"/>
+                        <outlet property="toolbar" destination="vLh-sN-c4e" id="5ap-M2-B0j"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1695" y="1619"/>
+            <point key="canvasLocation" x="-793" y="1083"/>
         </scene>
         <scene sceneID="vl5-cD-fIm">
             <objects>
@@ -35,8 +41,8 @@
                 <splitViewController id="ep3-kJ-Byb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <connections>
-                        <segue destination="gFj-l0-olg" kind="relationship" relationship="detailViewController" id="qsJ-Ir-hS9"/>
                         <segue destination="UYj-Ju-FMJ" kind="relationship" relationship="masterViewController" id="lM0-je-9FV"/>
+                        <segue destination="pe5-gw-9Z4" kind="relationship" relationship="detailViewController" id="uMn-ae-n8a"/>
                     </connections>
                 </splitViewController>
             </objects>
@@ -45,7 +51,7 @@
         <scene sceneID="wnm-rC-Vxk">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVO-8N-M3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="lh5-r6-04R" customClass="ListOfPlacesTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Main Menu" id="lh5-r6-04R" customClass="ListOfPlacesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="cO3-4c-R3f">
                         <rect key="frame" x="0.0" y="20" width="320" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -143,27 +149,10 @@
             </objects>
             <point key="canvasLocation" x="2007" y="-3130"/>
         </scene>
-        <scene sceneID="4O0-O9-CVi">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DGN-oq-Luv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="gFj-l0-olg" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="FFB-Ky-Yba">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="pe5-gw-9Z4" kind="relationship" relationship="rootViewController" id="8wS-w9-FEm"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="-47" y="1435"/>
-        </scene>
         <scene sceneID="x2r-YB-QdP">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nzX-p0-dxy" sceneMemberID="firstResponder"/>
-                <tabBarController id="UYj-Ju-FMJ" sceneMemberID="viewController">
+                <tabBarController title="Menu" id="UYj-Ju-FMJ" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="JO3-2R-t4j">
@@ -301,6 +290,31 @@
         <image name="first" width="16" height="16"/>
         <image name="second" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="ListOfPlacesTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListOfPlacesTableViewController.h"/>
+        </class>
+        <class className="PhotoScrollViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoScrollViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="PhotosOfPlaceTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotosOfPlaceTableViewController.h"/>
+        </class>
+        <class className="PlaceMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlaceMapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+            </relationships>
+        </class>
+        <class className="RecentPhotosTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentPhotosTableViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

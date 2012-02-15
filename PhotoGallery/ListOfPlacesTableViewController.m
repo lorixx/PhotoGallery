@@ -23,7 +23,7 @@
 
 -(id<SplitViewBarButtonItemPresenter>)splitViewBarButtonItemPresenter
 {
-    id detailVC = [[self.splitViewController.viewControllers lastObject] visibleViewController]; //current one is the mapview controller
+    id detailVC = [self.splitViewController.viewControllers lastObject] ; //current one is the mapview controller
     if (![detailVC conformsToProtocol:@protocol(SplitViewBarButtonItemPresenter)]) {
         detailVC = nil;
     }
@@ -131,7 +131,7 @@
 /* This is the method we check if we have this in iPad */
 -(PlaceMapViewController*) splitViewPlaceMapViewController
 {
-    id pmvc = [[self.splitViewController.viewControllers lastObject] visibleViewController];
+    id pmvc = [self.splitViewController.viewControllers lastObject] ;
     if (![pmvc isKindOfClass:[PlaceMapViewController class]]) {
         pmvc = nil;
     }

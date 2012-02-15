@@ -18,6 +18,7 @@
 @end
 
 @interface PlaceMapViewController : UIViewController <SplitViewBarButtonItemPresenter>
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (nonatomic, strong) NSArray *annotations; // of id <MKAnnotation>
 @property (nonatomic, weak) id <PlaceMapViewControllerDelegate> delegate;
 @property (nonatomic, weak) NSDictionary *place;

@@ -229,11 +229,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PhotoGallery/PlaceMapViewController.m"
-         timestampString = "350982903.189108"
+         timestampString = "350985651.427117"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "73"
-         endingLineNumber = "73"
+         startingLineNumber = "72"
+         endingLineNumber = "72"
          landmarkName = "-updateMapView"
          landmarkType = "5">
       </FileBreakpoint>
@@ -243,11 +243,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PhotoGallery/PlaceMapViewController.m"
-         timestampString = "350982903.189108"
+         timestampString = "350985651.427117"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "80"
-         endingLineNumber = "80"
+         startingLineNumber = "79"
+         endingLineNumber = "79"
          landmarkName = "-setMapView:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -257,11 +257,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PhotoGallery/PlaceMapViewController.m"
-         timestampString = "350982903.189108"
+         timestampString = "350985651.427117"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "86"
-         endingLineNumber = "86"
+         startingLineNumber = "85"
+         endingLineNumber = "85"
          landmarkName = "-setAnnotations:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -271,11 +271,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PhotoGallery/PlaceMapViewController.m"
-         timestampString = "350982903.189108"
+         timestampString = "350985651.427117"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "72"
-         endingLineNumber = "72"
+         startingLineNumber = "71"
+         endingLineNumber = "71"
          landmarkName = "-updateMapView"
          landmarkType = "5">
       </FileBreakpoint>
@@ -389,6 +389,34 @@
          startingLineNumber = "99"
          endingLineNumber = "99"
          landmarkName = "-viewWillAppear:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "PhotoGallery/ListOfPlacesTableViewController.m"
+         timestampString = "350984378.124063"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "50"
+         endingLineNumber = "50"
+         landmarkName = "-splitViewController:willHideViewController:withBarButtonItem:forPopoverController:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "PhotoGallery/PlaceMapViewController.m"
+         timestampString = "350984838.521532"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "37"
+         endingLineNumber = "37"
+         landmarkName = "-setSplitViewBarButtonItem:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
