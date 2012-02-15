@@ -11,7 +11,7 @@
 @interface ListOfPlacesTableViewController : UITableViewController
 
 @property (nonatomic, strong)NSArray *topPlaces;
-
+@property (nonatomic, strong)NSArray *simpleDataStructureAllPlaces;
 @property (nonatomic, strong) NSMutableArray *countryNames;
 
 @end

@@ -17,6 +17,7 @@
 
 @synthesize topPlaces = _topPlaces;
 @synthesize countryNames = _countryNames;
+@synthesize simpleDataStructureAllPlaces = _simpleDataStructureAllPlaces;
 
 /* Lazy initialization for getting the top places */
 -(NSArray*)topPlaces
@@ -24,6 +25,7 @@
     if (!_topPlaces) {
         
         NSArray* allPlaces = [FlickrFetcher topPlaces];
+        _simpleDataStructureAllPlaces = allPlaces;
         
         
         NSMutableDictionary *countryMap = [[NSMutableDictionary alloc]init ];
@@ -88,7 +90,7 @@
 /* This is the method we check if we have this in iPad */
 -(PlaceMapViewController*) splitViewPlaceMapViewController
 {
-    id pmvc = [self.splitViewController.viewControllers lastObject];
+    id pmvc = [[self.splitViewController.viewControllers lastObject] visibleViewController];
     if (![pmvc isKindOfClass:[PlaceMapViewController class]]) {
         pmvc = nil;
     }
@@ -130,7 +132,7 @@
         
         NSMutableArray *placeAnnotations = [NSMutableArray arrayWithCapacity:[self.topPlaces count]];
         
-        for (NSDictionary *place in [FlickrFetcher topPlaces]) {
+        for (NSDictionary *place in self.simpleDataStructureAllPlaces) {
             
             [placeAnnotations addObject:[PlaceOnMapAnnotation annotationForPlace:place]];
             

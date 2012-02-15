@@ -10,6 +10,7 @@
 #import "MKMapView+ZoomLevel.h"
 #import "FlickrFetcher.h"
 #import "PhotosOfPlaceTableViewController.h"
+#import "PlaceOnMapAnnotation.h"
 
 
 @interface PlaceMapViewController() <MKMapViewDelegate>
@@ -78,7 +79,13 @@
         aView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MapVC"];
         aView.canShowCallout = YES;
         //aView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-        aView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];;
+        
+        
+        if (![self.splitViewController.viewControllers lastObject] ) {  //if we are not in iPad
+            aView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];;
+        }
+        
+        
     }
     
     aView.annotation = annotation;
@@ -100,9 +107,11 @@
     [spinner startAnimating];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
     
-    dispatch_queue_t  getPhotosToSet = dispatch_queue_create("getPhotosToSet", NULL);
+    dispatch_queue_t  getPhotosToSet = dispatch_queue_create("getPhotosToSet", NULL);   
     dispatch_async(getPhotosToSet, ^{
-        photoOfPlaceTableViewController.photos = [FlickrFetcher photosInPlace:self.place maxResults:MAX_PHOTOS_FOR_PLACE];
+        
+        PlaceOnMapAnnotation *placeAnnotation = view.annotation;
+        photoOfPlaceTableViewController.photos = [FlickrFetcher photosInPlace: placeAnnotation.place  maxResults:MAX_PHOTOS_FOR_PLACE];
         dispatch_async(dispatch_get_main_queue(), ^{
             [spinner stopAnimating]; //stop animating of spinner
             [self.navigationController pushViewController:photoOfPlaceTableViewController animated:YES];

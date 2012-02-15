@@ -70,11 +70,11 @@
 {
     [super viewDidLoad];
     
-    
-    UIBarButtonItem *mapViewBtn = [[UIBarButtonItem alloc] initWithTitle:@"Map View"  style:UIBarButtonItemStylePlain target:self action:@selector(buttonMapViewClicked)];
-    
-    self.navigationItem.rightBarButtonItem = mapViewBtn;
-    
+    if (![self.splitViewController.viewControllers lastObject] ) {  //if we are not in iPad
+
+        UIBarButtonItem *mapViewBtn = [[UIBarButtonItem alloc] initWithTitle:@"Map View"  style:UIBarButtonItemStylePlain target:self action:@selector(buttonMapViewClicked)];
+        self.navigationItem.rightBarButtonItem = mapViewBtn;
+    }
     
     if (_refreshHeaderView == nil) {
 		
