@@ -12,9 +12,18 @@
                     <view key="view" contentMode="scaleToFill" id="CmG-hB-u6I">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="AP2-Rw-gjM">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="mapView" destination="AP2-Rw-gjM" id="Cty-fG-FtB"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="37" y="-249"/>
@@ -146,29 +155,6 @@
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1133" y="-1230"/>
-        </scene>
-        <scene sceneID="sF0-bH-Pcx">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cgf-X9-SEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="PlaceMapViewController" title="Place on Map" id="pjk-NQ-pN1" customClass="PlaceMapViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lcs-Qw-fcZ">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="M2i-ma-hy1">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
-                    <connections>
-                        <outlet property="mapView" destination="M2i-ma-hy1" id="HDi-DX-ndh"/>
-                    </connections>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="1050" y="-204"/>
         </scene>
     </scenes>
     <classes>

@@ -85,6 +85,17 @@
 
 #pragma mark - View lifecycle
 
+/* This is the method we check if we have this in iPad */
+-(PlaceMapViewController*) splitViewPlaceMapViewController
+{
+    id pmvc = [self.splitViewController.viewControllers lastObject];
+    if (![pmvc isKindOfClass:[PlaceMapViewController class]]) {
+        pmvc = nil;
+    }
+    return pmvc;
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -111,6 +122,24 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    //init map view here if it is in iPad
+    
+    PlaceMapViewController *pmvc = [self splitViewPlaceMapViewController];
+    if (pmvc) {
+        
+        NSMutableArray *placeAnnotations = [NSMutableArray arrayWithCapacity:[self.topPlaces count]];
+        
+        for (NSDictionary *place in [FlickrFetcher topPlaces]) {
+            
+            [placeAnnotations addObject:[PlaceOnMapAnnotation annotationForPlace:place]];
+            
+        }
+        
+        pmvc.annotations =placeAnnotations;
+        
+        
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -160,7 +189,11 @@
     // Configure the cell...    
     NSDictionary *place = [[self.topPlaces objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     cell.textLabel.text = [place valueForKey:FLICKR_PLACE_NAME];
-    cell.accessoryType=UITableViewCellAccessoryDetailDisclosureButton;
+    
+    if (![self splitViewPlaceMapViewController]) {
+        cell.accessoryType=UITableViewCellAccessoryDetailDisclosureButton;
+    }
+    
     
     
     
