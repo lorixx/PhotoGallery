@@ -236,11 +236,7 @@
     if (![self splitViewPlaceMapViewController]) {
         cell.accessoryType=UITableViewCellAccessoryDetailDisclosureButton;
     }
-    
-    
-    
-    
-    
+
     return cell;
 }
 

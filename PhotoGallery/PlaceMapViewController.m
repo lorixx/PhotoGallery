@@ -28,20 +28,15 @@
 @synthesize delegate = _delegate;
 @synthesize place = _place;
 @synthesize splitViewBarButtonItem = _splitViewBarButtonItem;
-@synthesize toolbar;
+@synthesize navBar = _navBar;
 
 
 /* Here is how we set up toobar item for split view in potrait mode */
 -(void) setSplitViewBarButtonItem:(UIBarButtonItem *)splitViewBarButtonItem
 {
     if (_splitViewBarButtonItem != splitViewBarButtonItem) {
-        NSMutableArray *toolbarItems = [self.toolbar.items mutableCopy];
-        if(_splitViewBarButtonItem) [toolbarItems removeObject:_splitViewBarButtonItem];
-        if (splitViewBarButtonItem) {
-            [toolbarItems insertObject:splitViewBarButtonItem atIndex:0];
-            self.toolbar.items = toolbarItems;
-            _splitViewBarButtonItem = splitViewBarButtonItem;
-        }
+        [self.navBar.topItem setLeftBarButtonItem:splitViewBarButtonItem animated:NO];
+
     }
 }
 
