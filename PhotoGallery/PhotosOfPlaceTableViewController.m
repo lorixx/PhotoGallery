@@ -12,6 +12,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "PhotosMapViewController.h"
 #import "PhotoOnMapAnnotation.h"
+#import "SplitViewBarButtonItemPresenter.h"
 
 
 
@@ -24,7 +25,48 @@
 @synthesize place = _place;
 @synthesize photos = _photos;
 
+#pragma mark - split view delegate methods
 
+-(id<SplitViewBarButtonItemPresenter>)splitViewBarButtonItemPresenter
+{
+    id detailVC = [self.splitViewController.viewControllers lastObject] ; //current one is the mapview controller
+    if (![detailVC conformsToProtocol:@protocol(SplitViewBarButtonItemPresenter)]) {
+        detailVC = nil;
+    }
+    return detailVC;
+}
+
+-(void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.splitViewController.delegate = self;
+}
+
+
+-(BOOL)splitViewController:(UISplitViewController *)svc 
+  shouldHideViewController:(UIViewController *)vc 
+             inOrientation:(UIInterfaceOrientation)orientation
+{
+    return [self splitViewBarButtonItemPresenter]?UIInterfaceOrientationIsPortrait(orientation):NO;
+}
+
+
+-(void) splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)pc
+{
+    barButtonItem.title = self.title; //set a button for it
+    [self splitViewBarButtonItemPresenter].splitViewBarButtonItem = barButtonItem;
+    //tell the detail view to put this button up
+    
+}
+
+-(void) splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    //tell the detail view to take the button away
+    
+}
+
+
+#pragma mark - initialize
 -(id) initWithPlace: (NSDictionary*)currentPlace
 {
     self = [super init ];

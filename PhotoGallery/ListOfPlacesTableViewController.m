@@ -56,7 +56,9 @@
 -(void) splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
 {
     //tell the detail view to take the button away
-    
+     PlaceMapViewController *pmvc = [self.splitViewController.viewControllers lastObject]; 
+    [pmvc.navBar.topItem setLeftBarButtonItem:nil animated:NO];
+
 }
 
 
@@ -167,7 +169,6 @@
     [super viewWillAppear:animated];
     
     //init map view here if it is in iPad
-    
     PlaceMapViewController *pmvc = [self splitViewPlaceMapViewController];
     if (pmvc) {
         
@@ -180,8 +181,6 @@
         }
         
         pmvc.annotations =placeAnnotations;
-        
-        
     }
 }
 

@@ -13,7 +13,7 @@
 
 
 
-@interface PhotosOfPlaceTableViewController : UITableViewController <EGORefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource>{
+@interface PhotosOfPlaceTableViewController : UITableViewController <EGORefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource,UISplitViewControllerDelegate>{
 
     EGORefreshTableHeaderView *_refreshHeaderView;
 
