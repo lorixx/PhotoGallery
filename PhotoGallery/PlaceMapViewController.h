@@ -17,11 +17,17 @@
 - (UIImage *)placeMapViewController:(PlaceMapViewController *)sender iamgeForAnnotation:(id <MKAnnotation>)annotation;
 @end
 
-@interface PlaceMapViewController : UIViewController <SplitViewBarButtonItemPresenter>
+@interface PlaceMapViewController : UIViewController <SplitViewBarButtonItemPresenter, MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 @property (nonatomic, strong) NSArray *annotations; // of id <MKAnnotation>
+
+@property (nonatomic, strong)NSArray *photoAnnotations;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
+
 @property (nonatomic, weak) id <PlaceMapViewControllerDelegate> delegate;
 @property (nonatomic, weak) NSDictionary *place;
+@property (nonatomic, weak) NSArray *photos; //saving all photos for the current selection in the view
 
 
 @end

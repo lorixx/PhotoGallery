@@ -13,10 +13,7 @@
 #import "PlaceOnMapAnnotation.h"
 
 
-@interface PlaceMapViewController() <MKMapViewDelegate>
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
-@end
 
 
 @implementation PlaceMapViewController
@@ -24,11 +21,72 @@
 #define ZOOM_LEVEL 9
 
 @synthesize mapView = _mapView;
-@synthesize annotations = _annotations;
+@synthesize annotations = _annotations; //place annotations
 @synthesize delegate = _delegate;
 @synthesize place = _place;
 @synthesize splitViewBarButtonItem = _splitViewBarButtonItem;
 @synthesize navBar = _navBar;
+@synthesize photoAnnotations = _photoAnnotations;
+@synthesize photos = _photos;
+
+
+
+#pragma mark - setting view
+-(void) setRegion
+{
+    if ([self.photos count] > 0) {
+        @try {
+            NSDictionary *firstPhoto = [self.photos objectAtIndex:0];
+            double max_long = [[firstPhoto objectForKey:FLICKR_LONGITUDE]doubleValue];
+            double min_long = [[firstPhoto objectForKey:FLICKR_LONGITUDE]doubleValue];
+            double max_lat =[[firstPhoto objectForKey:FLICKR_LATITUDE]doubleValue];
+            double min_lat = [[firstPhoto objectForKey:FLICKR_LATITUDE]doubleValue];
+            
+            for (NSDictionary *currentPhoto in self.photos) {
+                if ([[currentPhoto objectForKey:FLICKR_LATITUDE]doubleValue] > max_lat) {
+                    max_lat = [[currentPhoto objectForKey:FLICKR_LATITUDE]doubleValue];
+                } 
+                
+                if ([[currentPhoto objectForKey:FLICKR_LATITUDE]doubleValue] < min_lat) {
+                    min_lat = [[currentPhoto objectForKey:FLICKR_LATITUDE]doubleValue];
+                } 
+                if ([[currentPhoto objectForKey:FLICKR_LONGITUDE]doubleValue] > max_long) {
+                    max_long = [[currentPhoto objectForKey:FLICKR_LONGITUDE]doubleValue];
+                } 
+                
+                if ([[currentPhoto objectForKey:FLICKR_LONGITUDE]doubleValue] < min_long) {
+                    min_long = [[currentPhoto objectForKey:FLICKR_LONGITUDE]doubleValue];
+                }                 
+            }
+            
+            
+            double center_long = (max_long + min_long)/2;
+            double center_lat = (max_lat + min_lat)/2;
+            
+            double deltaLat = fabs(max_lat - min_lat) ;
+            double deltaLong = fabs(max_long - min_long) ;
+            
+            //if (deltaLat < 2) {deltaLat = 2;}
+            //if (deltaLong < 2) {deltaLong = 2;}
+            
+            CLLocationCoordinate2D coord;
+            coord.latitude = center_lat;
+            coord.longitude = center_long;
+            
+            MKCoordinateSpan span = MKCoordinateSpanMake(deltaLat, deltaLong);
+            MKCoordinateRegion region = {coord, span};
+            [self.mapView setRegion:region animated:YES];
+            
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Error calculating new map region: %@", exception);
+            
+        }
+    }
+}
+
+
+
 
 
 /* Here is how we set up toobar item for split view in potrait mode */
@@ -61,7 +119,7 @@
 
 #pragma mark - Synchronize Model and View
 
-- (void)updateMapView
+- (void)updatePlaceMapView
 {
     if (self.mapView.annotations) [self.mapView removeAnnotations:self.mapView.annotations];
     if (self.annotations) [self.mapView addAnnotations:self.annotations];
@@ -69,17 +127,35 @@
 
 }
 
+- (void)updatePhotoMapView
+{
+    if (self.mapView.annotations) [self.mapView removeAnnotations:self.mapView.annotations];
+    
+    [self setRegion];
+    
+    if (self.photoAnnotations) [self.mapView addAnnotations:self.photoAnnotations];    
+}
+
+
 - (void)setMapView:(MKMapView *)mapView
 {
     _mapView = mapView;
-    [self updateMapView];
+    [self updatePlaceMapView];
 }
 
 - (void)setAnnotations:(NSArray *)annotations
 {
     _annotations = annotations;
-    [self updateMapView];
+    [self updatePlaceMapView];
 }
+
+
+-(void)setPhotoAnnotations:(NSArray *)photoAnnotations
+{
+    _photoAnnotations = photoAnnotations;
+    [self updatePhotoMapView];
+}
+
 
 #pragma mark - MKMapViewDelegate
 
@@ -95,8 +171,6 @@
         if (![self.splitViewController.viewControllers lastObject] ) {  //if we are not in iPad
             aView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];;
         }
-        
-        
     }
     
     aView.annotation = annotation;
@@ -105,8 +179,8 @@
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)aView
 {
-    //UIImage *image = [self.delegate mapViewController:self imageForAnnotation:aView.annotation];
-    //[(UIImageView *)aView.leftCalloutAccessoryView setImage:image];
+//    UIImage *image = [self.delegate mapViewController:self imageForAnnotation:aView.annotation];
+//    [(UIImageView *)aView.leftCalloutAccessoryView setImage:image];
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
@@ -167,5 +241,8 @@
     // Return YES for supported orientations
     return YES;
 }
+
+
+
 
 @end

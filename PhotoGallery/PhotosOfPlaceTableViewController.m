@@ -13,6 +13,7 @@
 #import "PhotosMapViewController.h"
 #import "PhotoOnMapAnnotation.h"
 #import "SplitViewBarButtonItemPresenter.h"
+#import "PlaceMapViewController.h"
 
 
 
@@ -62,7 +63,20 @@
 -(void) splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
 {
     //tell the detail view to take the button away
+    PlaceMapViewController *pmvc = [self.splitViewController.viewControllers lastObject]; 
+    [pmvc.navBar.topItem setLeftBarButtonItem:nil animated:NO];
     
+}
+
+
+/* This is the method we check if we have this in iPad */
+-(PlaceMapViewController*) splitViewPlaceMapViewController
+{
+    id pmvc = [self.splitViewController.viewControllers lastObject] ;
+    if (![pmvc isKindOfClass:[PlaceMapViewController class]]) {
+        pmvc = nil;
+    }
+    return pmvc;
 }
 
 
@@ -152,6 +166,24 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    PlaceMapViewController *pmvc = [self splitViewPlaceMapViewController];
+    if (pmvc) {
+        
+        NSMutableArray *photonnotations = [NSMutableArray arrayWithCapacity:[self.photos count]];
+        
+        for (NSDictionary *photo in self.photos) {
+            
+            [photonnotations addObject:[PhotoOnMapAnnotation annotationForPhoto:photo]];
+            
+        }
+        pmvc.photos = self.photos;
+        pmvc.photoAnnotations = photonnotations;
+    }
+    
+    
+    
+    
     
 }
 

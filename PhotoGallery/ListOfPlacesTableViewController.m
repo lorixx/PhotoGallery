@@ -12,6 +12,8 @@
 #import "SingletonNetworkSpinner.h"
 #import "PlaceMapViewController.h"
 #import "PlaceOnMapAnnotation.h"
+#import "MKMapView+ZoomLevel.h"
+
 
 @implementation ListOfPlacesTableViewController
 
@@ -181,6 +183,11 @@
         }
         
         pmvc.annotations =placeAnnotations;
+        
+        
+        CLLocationCoordinate2D origin = {0,0};
+        [pmvc.mapView setCenterCoordinate:origin zoomLevel:1 animated:YES];
+        
     }
 }
 
