@@ -16,6 +16,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (strong, nonatomic) NSURL *photoURL;
+
 @end
 
 
@@ -27,7 +28,18 @@
 @synthesize imageView = _imageView;
 @synthesize photo = _photo;
 @synthesize photoURL = _photoURL;
+@synthesize navBar = _navBar;
+@synthesize splitViewBarButtonItem = _splitViewBarButtonItem;  //this is due to conforming to a protocol
 
+
+/* Here is how we set up toobar item for split view in potrait mode */
+-(void) setSplitViewBarButtonItem:(UIBarButtonItem *)splitViewBarButtonItem
+{
+    if (_splitViewBarButtonItem != splitViewBarButtonItem) {
+        [self.navBar.topItem setLeftBarButtonItem:splitViewBarButtonItem animated:NO];
+        
+    }
+}
 
 
 -(void)setScrollView:(UIScrollView *)scrollView
@@ -47,14 +59,6 @@
         
     }
     return _photoURL;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
 

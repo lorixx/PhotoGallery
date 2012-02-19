@@ -403,10 +403,30 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"iPhone_MainStoryboard" bundle:nil];
-    PhotoScrollViewController *photoViewController = [storyboard instantiateViewControllerWithIdentifier:@"PhotoScrollViewController"];
-    photoViewController.photo = [self.photos objectAtIndex:indexPath.row];
-    [self.navigationController pushViewController:photoViewController animated:YES];
+    
+    if ( ![self.splitViewController.viewControllers lastObject]) {  /* This is for iphone */
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"iPhone_MainStoryboard" bundle:nil];
+        PhotoScrollViewController *photoViewController = [storyboard instantiateViewControllerWithIdentifier:@"PhotoScrollViewController"];
+        photoViewController.photo = [self.photos objectAtIndex:indexPath.row];
+        [self.navigationController pushViewController:photoViewController animated:YES];
+    } else { /* This is for iPad */
+        
+        
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"iPad_MainStoryboard" bundle:nil];
+        PhotoScrollViewController *photoViewController = [storyboard instantiateViewControllerWithIdentifier:@"PhotoScrollViewController"];
+        photoViewController.photo = [self.photos objectAtIndex:indexPath.row];
+        
+        
+        //set current detail view as scroll view view controller
+
+        NSArray *viewControllers = [[NSArray alloc] initWithObjects:self.navigationController, photoViewController, nil];
+        
+        self.splitViewController.viewControllers = viewControllers;  
+        
+    }
+    
+
 }
 
 

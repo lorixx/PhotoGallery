@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SplitViewBarButtonItemPresenter.h"
 
 
-@interface PhotoScrollViewController : UIViewController
+@interface PhotoScrollViewController : UIViewController<SplitViewBarButtonItemPresenter>
 
 @property (strong, nonatomic) NSDictionary *photo;
+@property (nonatomic, weak) IBOutlet UINavigationBar *navBar;
 
 -(NSInteger) calculateSizeForAllFiles:(NSArray *)files onDirectoryPath: (NSString *)directoryPath;
 @end

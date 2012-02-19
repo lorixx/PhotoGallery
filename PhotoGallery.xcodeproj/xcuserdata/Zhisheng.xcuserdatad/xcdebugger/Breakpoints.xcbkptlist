@@ -79,11 +79,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PhotoGallery/PhotoScrollViewController.m"
-         timestampString = "350890824.456744"
+         timestampString = "351332496.731825"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "244"
-         endingLineNumber = "244">
+         startingLineNumber = "248"
+         endingLineNumber = "248">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
@@ -91,11 +91,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PhotoGallery/PhotoScrollViewController.m"
-         timestampString = "350890824.456744"
+         timestampString = "351332496.731825"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "243"
-         endingLineNumber = "243">
+         startingLineNumber = "247"
+         endingLineNumber = "247">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -159,11 +159,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PhotoGallery/PhotoScrollViewController.m"
-         timestampString = "350462559.297905"
+         timestampString = "351332496.731825"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "36"
-         endingLineNumber = "36"
+         startingLineNumber = "48"
+         endingLineNumber = "48"
          landmarkName = "-setScrollView:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -173,11 +173,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PhotoGallery/PhotoScrollViewController.m"
-         timestampString = "350462559.297905"
+         timestampString = "351332496.731825"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "35"
-         endingLineNumber = "35"
+         startingLineNumber = "47"
+         endingLineNumber = "47"
          landmarkName = "-setScrollView:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -355,11 +355,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PhotoGallery/PhotoScrollViewController.m"
-         timestampString = "350887042.886393"
+         timestampString = "351332496.731825"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "94"
-         endingLineNumber = "94"
+         startingLineNumber = "98"
+         endingLineNumber = "98"
          landmarkName = "-viewWillAppear:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -369,11 +369,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PhotoGallery/PhotoScrollViewController.m"
-         timestampString = "350882254.714036"
+         timestampString = "351332496.731825"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "45"
-         endingLineNumber = "45"
+         startingLineNumber = "57"
+         endingLineNumber = "57"
          landmarkName = "-photoURL"
          landmarkType = "5">
       </FileBreakpoint>
@@ -383,11 +383,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PhotoGallery/PhotoScrollViewController.m"
-         timestampString = "350887042.886393"
+         timestampString = "351332496.731825"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "99"
-         endingLineNumber = "99"
+         startingLineNumber = "103"
+         endingLineNumber = "103"
          landmarkName = "-viewWillAppear:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -424,13 +424,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "PhotoGallery/IpadMapViewController.m"
-         timestampString = "351327376.840343"
+         filePath = "PhotoGallery/PhotosOfPlaceTableViewController.m"
+         timestampString = "351333460.646564"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "169"
-         endingLineNumber = "169"
-         landmarkName = "-mapView:viewForAnnotation:"
+         startingLineNumber = "416"
+         endingLineNumber = "416"
+         landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -439,12 +439,26 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PhotoGallery/PhotosOfPlaceTableViewController.m"
-         timestampString = "351327616.302934"
+         timestampString = "351332892.03999"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "131"
-         endingLineNumber = "131"
-         landmarkName = "-ipadMapViewController:imageForAnnotation:"
+         startingLineNumber = "406"
+         endingLineNumber = "406"
+         landmarkName = "-tableView:didSelectRowAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "PhotoGallery/PhotosOfPlaceTableViewController.m"
+         timestampString = "351332892.823228"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "407"
+         endingLineNumber = "407"
+         landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -271,6 +271,13 @@
                                     </imageView>
                                 </subviews>
                             </scrollView>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" id="uw7-Bw-dV5">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="F7T-yK-twF"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -279,6 +286,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackTranslucent" prompted="NO"/>
                     <connections>
                         <outlet property="imageView" destination="aRh-CC-QyJ" id="VtF-5Z-T1d"/>
+                        <outlet property="navBar" destination="uw7-Bw-dV5" id="hVE-6p-hra"/>
                         <outlet property="scrollView" destination="B4R-C5-AgO" id="JjK-yq-Yd3"/>
                     </connections>
                 </viewController>
@@ -305,6 +313,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoScrollViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
         </class>
