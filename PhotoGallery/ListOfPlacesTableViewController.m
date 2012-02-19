@@ -14,6 +14,8 @@
 #import "PlaceOnMapAnnotation.h"
 #import "MKMapView+ZoomLevel.h"
 
+#import "IpadMapViewController.h"
+
 
 @implementation ListOfPlacesTableViewController
 
@@ -35,10 +37,23 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    self.splitViewController.delegate = self;
+    self.splitViewController.delegate = self;  //setting the delegate for detail view is this controller
 }
 
 
+
+/* This is the method we check if we have this in iPad */
+-(IpadMapViewController*) splitViewIpadMapViewController
+{
+    id pmvc = [self.splitViewController.viewControllers lastObject] ;
+    if (![pmvc isKindOfClass:[IpadMapViewController class]]) {
+        pmvc = nil;
+    }
+    return pmvc;
+}
+
+
+/* This method is used to set up, when we are in portrait mode, we hide the left side view controller */
 -(BOOL)splitViewController:(UISplitViewController *)svc 
   shouldHideViewController:(UIViewController *)vc 
              inOrientation:(UIInterfaceOrientation)orientation
@@ -132,16 +147,6 @@
 
 #pragma mark - View lifecycle
 
-/* This is the method we check if we have this in iPad */
--(PlaceMapViewController*) splitViewPlaceMapViewController
-{
-    id pmvc = [self.splitViewController.viewControllers lastObject] ;
-    if (![pmvc isKindOfClass:[PlaceMapViewController class]]) {
-        pmvc = nil;
-    }
-    return pmvc;
-}
-
 
 - (void)viewDidLoad
 {
@@ -171,8 +176,8 @@
     [super viewWillAppear:animated];
     
     //init map view here if it is in iPad
-    PlaceMapViewController *pmvc = [self splitViewPlaceMapViewController];
-    if (pmvc) {
+    IpadMapViewController *imvc = [self splitViewIpadMapViewController];
+    if (imvc) {
         
         NSMutableArray *placeAnnotations = [NSMutableArray arrayWithCapacity:[self.topPlaces count]];
         
@@ -182,11 +187,11 @@
             
         }
         
-        pmvc.annotations =placeAnnotations;
+        imvc.placeAnnotations =placeAnnotations;
         
         
         CLLocationCoordinate2D origin = {0,0};
-        [pmvc.mapView setCenterCoordinate:origin zoomLevel:1 animated:YES];
+        [imvc.mapView setCenterCoordinate:origin zoomLevel:1 animated:YES];  // set the center and zoom at the bigest
         
     }
 }
@@ -239,7 +244,7 @@
     NSDictionary *place = [[self.topPlaces objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     cell.textLabel.text = [place valueForKey:FLICKR_PLACE_NAME];
     
-    if (![self splitViewPlaceMapViewController]) {
+    if (![self splitViewIpadMapViewController]) {
         cell.accessoryType=UITableViewCellAccessoryDetailDisclosureButton;
     }
 

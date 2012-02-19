@@ -14,7 +14,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "226"
          endingLineNumber = "226"
-         landmarkName = "-tableView:numberOfRowsInSection:"
+         landmarkName = "-numberOfSectionsInTableView:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -28,8 +28,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "220"
          endingLineNumber = "220"
-         landmarkName = "-numberOfSectionsInTableView:"
-         landmarkType = "5">
+         landmarkName = "@implementation ListOfPlacesTableViewController"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -42,8 +42,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "72"
          endingLineNumber = "72"
-         landmarkName = "-topPlaces"
-         landmarkType = "5">
+         landmarkName = "@implementation ListOfPlacesTableViewController"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -70,8 +70,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "227"
          endingLineNumber = "227"
-         landmarkName = "-tableView:numberOfRowsInSection:"
-         landmarkType = "5">
+         landmarkName = "@implementation ListOfPlacesTableViewController"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -392,7 +392,7 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
@@ -402,7 +402,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "52"
          endingLineNumber = "52"
-         landmarkName = "-splitViewController:willHideViewController:withBarButtonItem:forPopoverController:"
+         landmarkName = "-splitViewIpadMapViewController"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -411,26 +411,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PhotoGallery/PlaceMapViewController.m"
-         timestampString = "351246566.496162"
+         timestampString = "351293185.159231"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "95"
-         endingLineNumber = "95"
-         landmarkName = "-setSplitViewBarButtonItem:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "PhotoGallery/PhotosOfPlaceTableViewController.m"
-         timestampString = "351244384.452576"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "149"
-         endingLineNumber = "149"
-         landmarkName = "-viewDidLoad"
+         startingLineNumber = "186"
+         endingLineNumber = "186"
+         landmarkName = "-mapView:annotationView:calloutAccessoryControlTapped:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

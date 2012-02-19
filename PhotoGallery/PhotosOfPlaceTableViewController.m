@@ -17,7 +17,7 @@
 
 
 
-@interface PhotosOfPlaceTableViewController()<PhotosMapViewControllerDelegate>
+@interface PhotosOfPlaceTableViewController()<PhotosMapViewControllerDelegate, IpadMapViewControllerDelegate>
 @end
 
 
@@ -111,6 +111,17 @@
 
 #pragma mark - PhotosMapViewControllerDelegate
 - (UIImage *)photoMapViewController:(PhotosMapViewController *)sender iamgeForAnnotation:(id <MKAnnotation>)annotation
+{
+    PhotoOnMapAnnotation *photoAnnotation = annotation;
+    NSDictionary *photo = photoAnnotation.photo;
+    NSURL *url = [FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatSquare];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    return data ? [UIImage imageWithData:data] : nil;
+}
+
+
+#pragma mark -IpadMapViewControllerDelegate    /* this is for ipad  */
+- (UIImage *)ipadMapViewController:(IpadMapViewController *)sender imageForAnnotation:(id <MKAnnotation>)annotation
 {
     PhotoOnMapAnnotation *photoAnnotation = annotation;
     NSDictionary *photo = photoAnnotation.photo;
