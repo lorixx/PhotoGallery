@@ -34,7 +34,9 @@
 
 - (NSString *)subtitle
 {
-    return [self.photo valueForKeyPath:OWNER_NAME_KEY];
+    NSMutableString * author = [[NSMutableString alloc]initWithString:@"By "];
+    [author appendString:[self.photo valueForKeyPath:OWNER_NAME_KEY]];
+    return author;
 }
 
 - (CLLocationCoordinate2D)coordinate

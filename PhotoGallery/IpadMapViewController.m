@@ -146,22 +146,31 @@
 
 
 #pragma mark - MKMapViewDelegate
-
+/* This is used for generating annotation view for both place or photo annotation */
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    MKAnnotationView *aView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"MapVC"];
-    if (!aView) {
-        aView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MapVC"];
-        aView.canShowCallout = YES;       
-        
-        if ([annotation isKindOfClass:[PhotoOnMapAnnotation class]] ) {  //if this is a photo annotation
-            aView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-            aView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-        }
-    }
     
-    aView.annotation = annotation;
-    return aView;
+    
+    if ([annotation isKindOfClass:[PhotoOnMapAnnotation class]] ) {  //if this is a photo annotation
+        MKAnnotationView *aView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"PhotosMap"];
+        if (!aView) {
+            aView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"PhotosMap"];
+            aView.canShowCallout = YES; 
+            aView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            aView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];    
+        } 
+        aView.annotation = annotation;
+        return aView;
+        
+    } else { /* This is place annotation */
+        MKAnnotationView *aView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"PlacesMap"];
+        if (!aView) {
+            aView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"PlacesMap"];
+            aView.canShowCallout = YES;  
+        }
+        aView.annotation = annotation;
+        return aView;
+    }
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)aView
@@ -175,6 +184,18 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     // To do: hook up another tableView Controller here, call out right accessory
+    if ([view.annotation isKindOfClass:[PhotoOnMapAnnotation class]] ) {  //call out a photo scroll view
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    
     
 }
 

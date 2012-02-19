@@ -94,7 +94,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackTranslucent" prompted="NO"/>
                     <connections>
-                        <segue destination="Faa-cY-7IX" kind="push" id="ypJ-gU-lTd"/>
+                        <segue destination="Faa-cY-7IX" kind="push" identifier="pushingPhotosList" id="ypJ-gU-lTd"/>
                     </connections>
                 </tableViewController>
             </objects>

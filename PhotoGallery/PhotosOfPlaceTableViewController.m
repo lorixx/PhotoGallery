@@ -41,6 +41,8 @@
 {
     [super awakeFromNib];
     self.splitViewController.delegate = self;
+    
+    
 }
 
 
@@ -63,20 +65,23 @@
 -(void) splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
 {
     //tell the detail view to take the button away
-    PlaceMapViewController *pmvc = [self.splitViewController.viewControllers lastObject]; 
+    IpadMapViewController *pmvc = [self.splitViewController.viewControllers lastObject]; 
     [pmvc.navBar.topItem setLeftBarButtonItem:nil animated:NO];
     
 }
 
 
 /* This is the method we check if we have this in iPad */
--(PlaceMapViewController*) splitViewPlaceMapViewController
+-(IpadMapViewController*) splitViewIpadMapViewController
 {
-    id pmvc = [self.splitViewController.viewControllers lastObject] ;
-    if (![pmvc isKindOfClass:[PlaceMapViewController class]]) {
-        pmvc = nil;
+    IpadMapViewController* imvc = [self.splitViewController.viewControllers lastObject] ;
+    if (![imvc isKindOfClass:[IpadMapViewController class]]) {
+        imvc = nil;
     }
-    return pmvc;
+    
+    imvc.iPadImageDelegate = self; 
+    
+    return imvc;
 }
 
 
@@ -178,8 +183,8 @@
 {
     [super viewWillAppear:animated];
     
-    PlaceMapViewController *pmvc = [self splitViewPlaceMapViewController];
-    if (pmvc) {
+    IpadMapViewController *imvc = [self splitViewIpadMapViewController];
+    if (imvc) {
         
         NSMutableArray *photonnotations = [NSMutableArray arrayWithCapacity:[self.photos count]];
         
@@ -188,13 +193,10 @@
             [photonnotations addObject:[PhotoOnMapAnnotation annotationForPhoto:photo]];
             
         }
-        pmvc.photos = self.photos;
-        pmvc.photoAnnotations = photonnotations;
+        imvc.currentPhotos = self.photos;
+        imvc.photoAnnotations = photonnotations;
     }
-    
-    
-    
-    
+
     
 }
 
