@@ -28,10 +28,10 @@
 
 
 
--(id<SplitViewBarButtonItemPresenter>)splitViewBarButtonItemPresenter
+-(id<SubstitutableDetailViewController>)substitutableDetailViewControllerExists
 {
     id detailVC = [self.splitViewController.viewControllers lastObject] ; //current one is the mapview controller
-    if (![detailVC conformsToProtocol:@protocol(SplitViewBarButtonItemPresenter)]) {
+    if (![detailVC conformsToProtocol:@protocol(SubstitutableDetailViewController)]) {
         detailVC = nil;
     }
     return detailVC;
@@ -61,7 +61,7 @@
   shouldHideViewController:(UIViewController *)vc 
              inOrientation:(UIInterfaceOrientation)orientation
 {
-    return [self splitViewBarButtonItemPresenter]?UIInterfaceOrientationIsPortrait(orientation):NO;
+    return [self substitutableDetailViewControllerExists]?UIInterfaceOrientationIsPortrait(orientation):NO;
 }
 
 
@@ -338,6 +338,9 @@
 
     NSDictionary *currentPlace = [[self.topPlaces objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     PhotosOfPlaceTableViewController *photoOfPlaceTableViewController = [[PhotosOfPlaceTableViewController alloc]initWithPlace: currentPlace];
+    photoOfPlaceTableViewController.poController = self.poController;
+    photoOfPlaceTableViewController.rootPopoverButtonItem = self.rootPopoverButtonItem;
+    
     
     //show spinner
     

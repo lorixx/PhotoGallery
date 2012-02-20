@@ -29,17 +29,7 @@
 @synthesize photo = _photo;
 @synthesize photoURL = _photoURL;
 @synthesize navBar = _navBar;
-@synthesize splitViewBarButtonItem = _splitViewBarButtonItem;  //this is due to conforming to a protocol
 
-
-/* Here is how we set up toobar item for split view in potrait mode */
--(void) setSplitViewBarButtonItem:(UIBarButtonItem *)splitViewBarButtonItem
-{
-    if (_splitViewBarButtonItem != splitViewBarButtonItem) {
-        [self.navBar.topItem setLeftBarButtonItem:splitViewBarButtonItem animated:NO];
-        
-    }
-}
 
 
 -(void)setScrollView:(UIScrollView *)scrollView
@@ -211,6 +201,17 @@
 }
 
 
+
+- (void)showRootPopoverButtonItem:(UIBarButtonItem *)barButtonItem {
+    // Add the popover button to the left navigation item.
+    [self.navBar.topItem setLeftBarButtonItem:barButtonItem animated:NO];
+}
+
+
+- (void)invalidateRootPopoverButtonItem:(UIBarButtonItem *)barButtonItem {
+    // Remove the popover button.
+    [self.navBar.topItem setLeftBarButtonItem:nil animated:NO];
+}
 
 
 @end

@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "SplitViewBarButtonItemPresenter.h"
+#import "SubstitutableDetailViewController.h"
 
 
-@interface PhotoScrollViewController : UIViewController<SplitViewBarButtonItemPresenter>
+@interface PhotoScrollViewController : UIViewController<SubstitutableDetailViewController>
 
 @property (strong, nonatomic) NSDictionary *photo;
 @property (nonatomic, weak) IBOutlet UINavigationBar *navBar;
