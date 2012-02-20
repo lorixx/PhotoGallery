@@ -199,6 +199,22 @@
     
 }
 
+
+
+#pragma mark - new bar button protocol
+- (void)showRootPopoverButtonItem:(UIBarButtonItem *)barButtonItem {
+    // Add the popover button to the left navigation item.
+    [self.navBar.topItem setLeftBarButtonItem:barButtonItem animated:NO];
+}
+
+
+- (void)invalidateRootPopoverButtonItem:(UIBarButtonItem *)barButtonItem {
+    // Remove the popover button.
+    [self.navBar.topItem setLeftBarButtonItem:nil animated:NO];
+}
+
+
+
 #pragma mark - View lifecycle
 
 /*

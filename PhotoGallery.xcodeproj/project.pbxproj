@@ -55,7 +55,8 @@
 		DB24F8EB14E8517F0017150F /* PhotosMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosMapViewController.h; sourceTree = "<group>"; };
 		DB24F8EC14E8517F0017150F /* PhotosMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosMapViewController.m; sourceTree = "<group>"; };
 		DB24F8EE14EA30AB0017150F /* iPad_MainStoryboard.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad_MainStoryboard.Storyboard; sourceTree = "<group>"; };
-		DBCA6E0C14F0BB8200650E8E /* IpadMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = IpadMapViewController.h; sourceTree = "<group>"; };
+		DB99318114F234FF00BD4172 /* SubstitutableDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubstitutableDetailViewController.h; sourceTree = "<group>"; };
+		DBCA6E0C14F0BB8200650E8E /* IpadMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IpadMapViewController.h; sourceTree = "<group>"; };
 		DBCA6E0D14F0BB8300650E8E /* IpadMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IpadMapViewController.m; sourceTree = "<group>"; };
 		DBD1F3CC14EB8C6A001FC9C7 /* SplitViewBarButtonItemPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitViewBarButtonItemPresenter.h; sourceTree = "<group>"; };
 		DBD3AC2314E0EC83008F94C3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -231,6 +232,7 @@
 				DB24F8EB14E8517F0017150F /* PhotosMapViewController.h */,
 				DB24F8EC14E8517F0017150F /* PhotosMapViewController.m */,
 				DBD1F3CC14EB8C6A001FC9C7 /* SplitViewBarButtonItemPresenter.h */,
+				DB99318114F234FF00BD4172 /* SubstitutableDetailViewController.h */,
 				DBCA6E0C14F0BB8200650E8E /* IpadMapViewController.h */,
 				DBCA6E0D14F0BB8300650E8E /* IpadMapViewController.m */,
 				DBEEBEEE14D795A900D992FD /* Supporting Files */,

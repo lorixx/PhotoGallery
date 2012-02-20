@@ -15,6 +15,7 @@
 #import "FlickrFetcher.h"
 #import "ListOfPlacesTableViewController.h"
 #import "PhotosOfPlaceTableViewController.h"
+#import "SubstitutableDetailViewController.h"
 
 @class IpadMapViewController;
 @protocol IpadMapViewControllerDelegate <NSObject>    //this delegate should be used in PhotosOfPlaceTableViewController
@@ -22,7 +23,7 @@
 @end
 
 
-@interface IpadMapViewController : UIViewController<SplitViewBarButtonItemPresenter, MKMapViewDelegate>
+@interface IpadMapViewController : UIViewController<SplitViewBarButtonItemPresenter, MKMapViewDelegate, SubstitutableDetailViewController>
 
 @property (nonatomic, weak) IBOutlet UINavigationBar *navBar;
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;

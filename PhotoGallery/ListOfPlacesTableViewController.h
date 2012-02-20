@@ -14,4 +14,8 @@
 @property (nonatomic, strong)NSArray *simpleDataStructureAllPlaces;
 @property (nonatomic, strong) NSMutableArray *countryNames;
 
+
+@property (nonatomic, weak) UIPopoverController *poController;
+@property (nonatomic, weak) UIBarButtonItem *rootPopoverButtonItem;
+
 @end

@@ -13,6 +13,7 @@
 #import "PlaceMapViewController.h"
 #import "PlaceOnMapAnnotation.h"
 #import "MKMapView+ZoomLevel.h"
+#import "SubstitutableDetailViewController.h"
 
 #import "IpadMapViewController.h"
 
@@ -22,6 +23,8 @@
 @synthesize topPlaces = _topPlaces;
 @synthesize countryNames = _countryNames;
 @synthesize simpleDataStructureAllPlaces = _simpleDataStructureAllPlaces;
+@synthesize rootPopoverButtonItem = _rootPopoverButtonItem;
+@synthesize poController = _poController;
 
 
 
@@ -63,19 +66,22 @@
 
 
 -(void) splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)pc
-{
-    barButtonItem.title = self.title; //set a button for it
-    [self splitViewBarButtonItemPresenter].splitViewBarButtonItem = barButtonItem;
-    //tell the detail view to put this button up
-    
+{    
+    // Keep references to the popover controller and the popover button, and tell the detail view controller to show the button.
+    barButtonItem.title = self.title;
+    self.poController = pc;
+    self.rootPopoverButtonItem = barButtonItem;
+    UIViewController <SubstitutableDetailViewController> *detailViewController = [self.splitViewController.viewControllers lastObject];
+    [detailViewController showRootPopoverButtonItem:self.rootPopoverButtonItem];    
 }
 
 -(void) splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
 {
-    //tell the detail view to take the button away
-     PlaceMapViewController *pmvc = [self.splitViewController.viewControllers lastObject]; 
-    [pmvc.navBar.topItem setLeftBarButtonItem:nil animated:NO];
-
+    
+    UIViewController <SubstitutableDetailViewController> *detailViewController = [self.splitViewController.viewControllers lastObject];
+    [detailViewController invalidateRootPopoverButtonItem:self.rootPopoverButtonItem];
+    self.poController = nil;
+    self.rootPopoverButtonItem = nil;
 }
 
 
